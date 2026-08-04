@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+  <title id="title">Physical AI loop</title>
+  <desc id="desc">A four-step loop connecting sensing, decision, action, and the next observation.</desc>
+  <rect width="760" height="500" fill="#102535"/>
+  <path d="M178 126 C220 58 309 42 365 64" fill="none" stroke="#75c5c0" stroke-width="3"/>
+  <path d="M418 71 C510 51 592 93 625 163" fill="none" stroke="#dca957" stroke-width="3"/>
+  <path d="M630 220 C666 312 609 389 532 422" fill="none" stroke="#d98272" stroke-width="3"/>
+  <path d="M464 433 C361 474 243 444 177 361" fill="none" stroke="#75c5c0" stroke-width="3"/>
+  <path d="M135 303 C96 240 118 164 178 126" fill="none" stroke="#dca957" stroke-width="3"/>
+  <g fill="#f7faf7" font-family="Arial, sans-serif">
+    <text x="54" y="48" fill="#9dc9c7" font-size="13" letter-spacing="2">THE SMALLEST USEFUL LOOP</text>
+    <text x="54" y="80" fill="#f7faf7" font-size="25" font-weight="700">observe → decide → act</text>
+  </g>
+  <g>
+    <circle cx="156" cy="178" r="76" fill="#194455" stroke="#75c5c0" stroke-width="2"/>
+    <text x="156" y="169" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">SENSE</text>
+    <text x="156" y="195" fill="#b9d9d7" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">camera / state</text>
+  </g>
+  <g>
+    <circle cx="487" cy="158" r="76" fill="#4e3d24" stroke="#dca957" stroke-width="2"/>
+    <text x="487" y="149" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">DECIDE</text>
+    <text x="487" y="175" fill="#ead8b7" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">policy / plan</text>
+  </g>
+  <g>
+    <circle cx="520" cy="348" r="76" fill="#4a2d2a" stroke="#d98272" stroke-width="2"/>
+    <text x="520" y="339" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">ACT</text>
+    <text x="520" y="365" fill="#e8c5c0" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">motor / gripper</text>
+  </g>
+  <g>
+    <circle cx="197" cy="346" r="76" fill="#24423e" stroke="#75c5c0" stroke-width="2"/>
+    <text x="197" y="337" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">CHECK</text>
+    <text x="197" y="363" fill="#b9d9d7" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">result / safety</text>
+  </g>
+  <circle cx="346" cy="255" r="58" fill="#f7faf7"/>
+  <text x="346" y="246" fill="#102535" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">NEXT</text>
+  <text x="346" y="270" fill="#52636b" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">observation</text>
+  <path d="M227 205 L278 231" stroke="#f7faf7" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M529 223 L533 270" stroke="#f7faf7" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M451 337 L393 293" stroke="#f7faf7" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M273 318 L256 302" stroke="#f7faf7" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#f7faf7"/></marker>
+  </defs>
+</svg>
