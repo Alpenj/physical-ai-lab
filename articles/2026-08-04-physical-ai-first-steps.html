@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Physical AI를 실제 학습 과정과 작은 실험으로 정리하는 개인 학습 기록.">
-    <title>Physical AI Lab | 001 피지컬 AI를 배우기 시작하며</title>
+    <meta name="description" content="11월까지 이어지는 Physical AI 교육에서 현재 확인한 것과 다음 실습을 남기는 진행 기록.">
+    <title>Physical AI Lab | 001 교육을 따라가며, 지금 확인한 것과 다음 단계</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
@@ -15,7 +15,7 @@
       </a>
       <nav class="site-nav" aria-label="주요 메뉴">
         <a href="../index.html#posts">학습 기록</a>
-        <a href="#system">시스템 지도</a>
+        <a href="#system">현재 구조</a>
         <a href="#sources">출처</a>
       </nav>
     </header>
@@ -23,54 +23,54 @@
     <main id="top">
       <section class="hero-band" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="eyebrow">LEARNING LOG · 001 / 090 · 2026.08.04</p>
-          <h1 id="page-title">피지컬 AI를 배우기 시작하며,<br>먼저 정한 것들</h1>
+          <p class="eyebrow">LEARNING LOG · 001 / COURSE IN PROGRESS · 2026.08.04</p>
+          <h1 id="page-title">Physical AI 교육을 따라가며,<br>지금 확인한 것과 다음 단계</h1>
           <p class="hero-summary">
-            처음부터 모델 이름을 고르지 않고, 로봇이 무엇을 보고 어떻게 움직이는지부터 다시 정리했다.
+            11월까지 이어질 교육을 따라가며, 수업에서 배운 개념을 작은 실습과 DAPIER 기록에 계속 연결하고 있다.
           </p>
           <div class="hero-meta" aria-label="글 정보">
-            <span>입문</span>
-            <span>Physical AI 기초</span>
-            <span>학습 일지</span>
+            <span>교육 진행 중</span>
+            <span>현재: ROS 2·URDF·이미테이션 러닝</span>
+            <span>다음: SO-101 데이터</span>
           </div>
         </div>
         <figure class="hero-figure">
           <img src="../assets/physical-ai-loop.svg" alt="센서, 판단, 행동, 다시 관찰하는 피지컬 AI 순환 구조">
-          <figcaption>내가 먼저 그린 Physical AI의 최소 구조. 모델보다 흐름을 먼저 본다.</figcaption>
+          <figcaption>현재 수업과 실습에서 다시 확인하는 Physical AI의 최소 흐름.</figcaption>
         </figure>
       </section>
 
       <section class="article-shell" id="journal">
         <article class="article">
           <p class="article-lede">
-            처음에는 Physical AI를 너무 크게 생각했다. 거대한 모델, 값비싼 장비, 복잡한 시뮬레이터를 먼저 알아야 시작할 수 있다고 생각했다. 그런데 국비 Physical AI 교육을 들으며 내가 DAPIER에 정리해 둔 첫 수업 기록과 로봇암 실습 메모를 다시 읽어 보니, 시작점은 훨씬 단순했다. <strong>현재 상태를 읽고, 다음 행동을 만들고, 결과를 다시 확인하는 것.</strong>
+            이 글은 끝낸 프로젝트의 회고가 아니다. 지금도 국비 Physical AI 교육을 듣고 있고, 11월까지 수업과 실습을 이어가며 <a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">DAPIER</a>에 기록을 추가할 예정이다. 지금 공개하는 내용은 최종 결과가 아니라 오늘까지 확인한 범위의 스냅샷이다. 내가 당장 하려는 일은 Physical AI 전체를 다 아는 것이 아니라, 이번 수업에서 배운 개념 하나를 코드나 장치 상태와 연결해 직접 확인하는 것이다.
           </p>
 
           <div class="reading-time">
             <span>읽는 시간 6분</span>
-            <span>이번 글의 목표: 모델이 아니라 시스템의 첫 흐름 이해하기</span>
+            <span>현재 상태를 남기고 다음 실습으로 이어가기</span>
           </div>
 
           <section class="article-section">
             <p class="section-index">01</p>
-            <h2>지금 내가 이해한 Physical AI</h2>
+            <h2>교육 중인 지금, Physical AI를 이렇게 연결하고 있다</h2>
             <p>
-              내가 지금까지 이해한 Physical AI는 화면 안에서 답을 만드는 AI보다 범위가 넓다. 카메라와 관절 센서로 주변과 로봇의 상태를 읽고, 정책이나 제어기가 다음 행동을 정한 뒤, 모터와 그리퍼가 실제 세계에 영향을 준다. 그 결과가 다시 다음 관찰이 된다.
+              첫 수업에서는 Physical AI의 방향과 프로젝트 범위를 잡았다. 그 뒤로 Python 자료구조와 반복문, 파일과 함수, Pygame, 클래스와 모듈, NumPy와 시각화, 스레딩과 Queue를 지나 Arduino Serial·PWM과 C++ 기초를 배웠다. 최근 수업에서는 Ubuntu와 ROS 2의 node·topic, Vision과 teleop, URDF·RViz, ROS 기반 AGV 통신, 이미테이션 러닝까지 연결해서 보고 있다.
             </p>
             <p>
-              그래서 학습 단위를 모델 하나로 잡으면 자꾸 중요한 것이 빠진다. 관측값의 이름과 순서, action의 단위, 센서 timestamp, 안전 제한, 실패를 다시 재현할 방법까지 함께 봐야 한다. 아직 어려운 용어가 많지만, 이 흐름만 놓치지 않기로 했다.
+              이 순서는 이미 끝낸 커리큘럼을 자랑하려는 목록이 아니다. 수업에서 앞에서 배운 Python과 통신 개념이 뒤의 로봇 실습에서 다시 등장하는 것을 확인하는 과정이다. 아직 전체 교육이 끝난 것도 아니고, 카메라 데이터와 정책을 실제 장치에서 안정적으로 평가하는 단계도 남아 있다. 그래서 지금은 모델 이름보다 <strong>상태를 읽고, 행동을 만들고, 결과를 다시 확인하는 흐름</strong>을 놓치지 않으려 한다.
             </p>
           </section>
 
           <section class="pull-quote">
-            <p>“이번에는 많이 아는 것보다, 한 번의 행동을 끝까지 설명하는 것을 목표로 잡았다.”</p>
+            <p>“이번 기록은 완료 보고서가 아니라, 다음 수업에서 이어 갈 현재 위치다.”</p>
           </section>
 
           <section class="article-section" id="system">
             <p class="section-index">02</p>
-            <h2>교육 실습 기록에서 흐름을 작게 줄여 봤다</h2>
+            <h2>DAPIER는 수업과 실습을 쌓아 두는 내 기록장이다</h2>
             <p>
-              국비 교육을 들으며 내가 정리한 <a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">DAPIER 레포</a>의 README에는 ROS 2, Arduino Uno, 네 개의 서보, RViz와 Gazebo를 연결해 본 로봇암 실습 구조가 적혀 있다. 이 레포를 새로 공부하는 것이 아니라, 내가 배운 내용을 다시 설명하기 위해 기록을 꺼내 본 것이다. 그 과정에서 특히 눈에 들어온 것은 거창한 모델이 아니라 메시지와 단위의 경계였다.
+              DAPIER는 내가 교육을 들으며 수업 내용과 실습 과정을 정리해 가는 개인 레포다. 이 레포를 새로 공부하는 것이 아니라, 내가 배운 내용을 다시 설명하고 다음 실습을 준비하기 위해 현재 기록을 꺼내 보는 것이다. 공개 README에 남겨 둔 ROS 2 로봇암 구조에서는 <code>JointState</code> 메시지가 브리지와 Arduino Uno를 거쳐 서보의 PWM 명령으로 이어진다.
             </p>
             <div class="flow-diagram" aria-label="DAPIER 로봇암의 데이터 흐름">
               <div class="flow-node"><span>01</span><strong>JointState</strong><small>ROS 2 / radian</small></div>
@@ -82,63 +82,63 @@
               <div class="flow-node"><span>04</span><strong>Servo</strong><small>physical motion</small></div>
             </div>
             <p>
-              예를 들어 ROS와 URDF 쪽은 라디안으로 관절 위치를 표현하고, 서보 명령은 도 단위로 보낸다. 이 작은 변환 하나가 맞지 않으면 화면의 로봇과 실제 로봇이 서로 다른 방향으로 움직일 수 있다. Physical AI를 배운다는 말이 결국 이런 경계를 직접 확인하는 일이라는 생각이 들었다.
+              예를 들어 ROS 2와 URDF 쪽 관절 위치는 라디안으로 다루고, 서보 명령은 도 단위로 보낸다. README에 적어 둔 현재 실습 기준은 <code>servo_degree = 90 + degrees(urdf_radian)</code>처럼 중심값과 단위를 먼저 확인하는 것이다. 이런 경계가 맞아야 화면의 로봇과 실제 로봇을 같은 문제로 이야기할 수 있다. 앞으로 카메라, 데이터셋, 정책 실습을 진행하면 그 결과도 직접 확인한 범위부터 DAPIER에 이어서 남길 예정이다.
             </p>
             <pre class="code-block"><code>servo_degree = 90 + degrees(urdf_radian)</code></pre>
-            <p class="code-caption">중심값과 단위를 먼저 적어 두면, 나중에 이상한 움직임을 설명하기가 쉬워진다.</p>
+            <p class="code-caption">현재 기록에서 확인한 단위 변환. 다음 실습에서도 같은 기준을 다시 점검한다.</p>
           </section>
 
           <section class="article-section">
             <p class="section-index">03</p>
-            <h2>첫날부터 범위를 줄인 이유</h2>
+            <h2>수업을 따라가며 계속 지키는 작은 기준</h2>
             <p>
-              교육을 들으며 정리해 둔 DAPIER 기록에는 프로젝트를 <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 나누자는 기준이 남아 있다. 이 기준이 마음에 들었다. 자연어 명령, 이동, 양팔 조작, imitation learning을 한 번에 넣으면 무엇이 실패했는지 설명하기 어렵기 때문이다.
+              지금 내 학습 방식은 AI가 알려 준 내용을 그대로 완료 처리하는 것이 아니다. 용어나 오류 원인의 후보를 찾는 데 도움을 받을 수는 있지만, 코드 실행·배선·장치 동작·결과 판단은 직접 확인한 경우만 기록한다. 한 번에 큰 시스템을 완성했다고 쓰지 않고 <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 범위를 나눠 보는 이유도 여기에 있다.
             </p>
             <div class="decision-grid">
-              <div class="decision-row"><span class="decision-tag keep">남길 것</span><p>작은 행동 하나를 끝까지 기록하고, 성공 조건과 중단 이유를 적는다.</p></div>
-              <div class="decision-row"><span class="decision-tag defer">미룰 것</span><p>아직 실행하지 않은 VLA·대규모 학습·복잡한 하드웨어 확장을 결과처럼 말하지 않는다.</p></div>
-              <div class="decision-row"><span class="decision-tag check">확인할 것</span><p>센서 입력, action 단위, 데이터 저장 구조, 안전 범위를 실제 로그로 확인한다.</p></div>
+              <div class="decision-row"><span class="decision-tag keep">지금 기록</span><p>ROS 2 메시지와 node·topic, URDF·TF·RViz, 관절 순서와 단위를 수업 실습과 연결한다.</p></div>
+              <div class="decision-row"><span class="decision-tag check">다음 확인</span><p>SO-101의 calibration과 카메라 조건을 점검하고, record → dataset으로 이어지는 데이터 계약을 직접 남긴다.</p></div>
+              <div class="decision-row"><span class="decision-tag defer">계획으로 남김</span><p>BC/ACT baseline, rollout 평가, 안전 계층, sim-to-real은 11월까지 확인해 갈 목표이지 현재 완료한 결과가 아니다.</p></div>
             </div>
             <p>
-              지금 단계에서 “이 모델이 된다”고 말하는 것보다 “이 입력을 이렇게 기록했고, 이 조건에서 아직 확인하지 못했다”고 말하는 편이 더 정확하다. 학습 기록을 공개 글로 옮길 때도 이 기준을 유지하려 한다.
+              지금 단계에서 중요한 문장은 “이 모델이 된다”가 아니라 “이 입력과 단위를 이 조건에서 확인했고, 이 부분은 아직 실행하지 않았다”이다. 교육이 진행되는 동안 기록의 문장도 이 기준에 맞춰 계속 수정하려 한다.
             </p>
           </section>
 
           <section class="article-section beginner-section">
             <p class="section-index">04</p>
-            <h2>처음 보는 사람에게 먼저 설명할 다섯 단어</h2>
+            <h2>지금 수업에서 다시 쓰는 다섯 단어</h2>
             <p>
-              처음부터 논문이나 전체 프레임워크를 펼치면 단어가 서로 겹친다. 그래서 당분간은 아래 다섯 단어를 내 말로 설명할 수 있는지를 기준으로 삼는다.
+              뒤의 실습으로 갈수록 같은 단어가 자주 나온다. 아직 완벽히 익혔다고 말하기보다, 현재 수업에서 다음처럼 다시 설명해 보면서 빈 곳을 찾고 있다.
             </p>
             <div class="term-list">
               <div><strong>Observation</strong><span>로봇이 지금 보고 있는 값. 카메라 영상과 관절 위치가 예시다.</span></div>
               <div><strong>Action</strong><span>로봇이 다음에 수행할 명령. 목표 관절 위치처럼 표현할 수 있다.</span></div>
               <div><strong>Episode</strong><span>시작부터 종료까지 한 번의 시도. 물체 집기 1회가 한 episode가 된다.</span></div>
               <div><strong>Policy</strong><span>관찰을 보고 다음 행동을 정하는 함수나 모델이다.</span></div>
-              <div><strong>Rollout</strong><span>학습된 policy를 실제 환경에서 실행하고 결과를 재는 과정이다.</span></div>
+              <div><strong>Rollout</strong><span>정한 policy를 환경에서 실행하고 결과를 확인하는 과정이다.</span></div>
             </div>
           </section>
 
           <section class="article-section">
             <p class="section-index">05</p>
-            <h2>아직 하지 않은 것과 다음에 할 것</h2>
+            <h2>11월까지의 진행 방향</h2>
             <p>
-              이 글에서 말하는 “시작했다”는 말은 모든 것을 끝냈다는 뜻이 아니다. 지금 확인한 것은 학습 순서와 시스템 경계이고, 실제 장비에서의 안정적인 rollout이나 새로운 초기 위치에서의 성공률은 다음 실험으로 남아 있다.
+              아래는 끝낸 목록이 아니라, 교육과 개인 실습을 따라가며 업데이트할 진행표다. 막히는 지점이 생기면 순서를 바꿀 수 있고, 실제로 확인하지 못한 항목은 완료 표시를 하지 않는다.
             </p>
             <ol class="next-list">
-              <li><span>01</span> Observation, action, episode를 데이터 한 프레임과 연결해 설명하기</li>
-              <li><span>02</span> 작은 record → dataset → train → eval 예제를 직접 실행하고 숫자 하나를 바꿔 보기</li>
-              <li><span>03</span> ROS 2의 node, topic, service, action을 작은 예제로 나누어 보기</li>
-              <li><span>04</span> SO-101 또는 시뮬레이션에서 관절 순서·단위·카메라 키를 고정하기</li>
-              <li><span>05</span> 성공률뿐 아니라 지연, timeout, intervention, 안전 정지를 함께 기록하기</li>
+              <li><span>01</span> 현재 수업에서 ROS 2 통신 계약과 URDF·TF·RViz의 관계를 작은 예제로 다시 확인하기</li>
+              <li><span>02</span> SO-101 관절 calibration과 카메라 조건을 점검하고, observation·action·episode의 데이터 모양 고정하기</li>
+              <li><span>03</span> 소수의 episode를 기록해 dataset validator와 LeRobot 데이터 흐름을 통과시키기</li>
+              <li><span>04</span> BC/ACT 같은 모방학습 baseline을 작은 범위에서 실행하고 rollout 결과를 평가하기</li>
+              <li><span>05</span> 안전 정지, 실패 유형, sim-to-real 가능성을 확인해 11월의 다음 선택으로 남기기</li>
             </ol>
           </section>
 
           <section class="closing-note">
             <p class="section-index">NEXT</p>
-            <h2>다음 글에서는 데이터 한 프레임을 본다</h2>
+            <h2>다음 수업 전, DAPIER에 남길 것</h2>
             <p>
-              다음에는 실제 모델 이름보다 먼저, 한 프레임에 observation과 action이 어떤 모양으로 들어가는지 정리할 예정이다. 그 구조를 이해해야 imitation learning을 “시범을 많이 모으면 된다”보다 정확하게 설명할 수 있기 때문이다.
+              다음 기록에서는 이번 수업에서 이해한 개념 하나를 작은 코드나 실습 로그와 연결해 보려고 한다. 실행한 명령, 실제로 본 결과, 막힌 조건을 나눠 적고, 그 결과에 따라 레포의 다음 폴더와 글의 다음 질문을 정할 것이다. 11월에 교육이 끝날 때까지 이 페이지는 지금보다 더 많은 기록을 갖게 되겠지만, 매번 현재 확인한 범위에서 출발한다.
             </p>
           </section>
 
@@ -146,36 +146,36 @@
             <p class="section-index">SOURCES</p>
             <h2>이 글을 쓰는 데 참고한 기록</h2>
             <ul>
-              <li>DAPIER 개인 학습 기록: 국비 Physical AI 교육 중 정리한 Physical AI 방향·프로젝트 범위, 2026-07-06</li>
-              <li>DAPIER 개인 학습 기록: 국비 교육 중 정리한 이미테이션 러닝 90분 실습</li>
-              <li>DAPIER 개인 학습 기록: 국비 교육 중 정리한 NVIDIA Physical AI 강의 노트</li>
+              <li>DAPIER 개인 학습 기록: 2026-07-06 Physical AI 방향·프로젝트 범위와 이후 교육 실습 메모</li>
+              <li>DAPIER 개인 학습 기록: Python, Arduino·C++, Ubuntu·ROS 2, Vision·Teleop·URDF, 이미테이션 러닝 수업 기록</li>
+              <li>DAPIER 개인 학습 기록: SO-101 calibration·데이터 수집·모방학습으로 이어지는 현재 학습 지도</li>
               <li><a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">Alpenj/DAPIER</a> README: 내가 정리한 ROS 2·Arduino·RViz·Gazebo 로봇암 실습 구조</li>
             </ul>
-            <p class="source-boundary">이 글은 국비 교육을 들으며 내가 정리한 학습·실습 기록을 다시 설명한 것이다. 개인 경로, 원문 전사, 계정 정보는 공개하지 않고 공개 레포에 남긴 구조만 재구성했다.</p>
+            <p class="source-boundary">교육은 2026년 11월까지 진행 중이며, 이 글과 DAPIER 레포는 그 과정에서 계속 바뀌는 현재 기록이다. 개인 경로, 비공개 원문, 계정 정보, 실행하지 않은 실험 결과는 공개하지 않는다.</p>
           </section>
         </article>
 
         <aside class="side-rail" aria-label="학습 기록 정보">
           <div class="rail-block">
             <p class="rail-label">CURRENT TRACK</p>
-            <h3>입문 → 시스템 이해</h3>
-            <p>모델보다 센서·데이터·제어·검증의 연결을 먼저 익히는 중이다.</p>
+            <h3>교육 진행 중 → 11월까지</h3>
+            <p>현재 수업의 ROS 2·URDF 흐름에서 SO-101 데이터와 모방학습 실습으로 이어 가는 중이다.</p>
           </div>
           <div class="rail-block">
             <p class="rail-label">LATEST DEEP DIVES</p>
             <!-- BLOG_INDEX_START -->
-            <a class="rail-link" href="#page-title"><span>001</span> 피지컬 AI를 배우기 시작하며</a>
+            <a class="rail-link" href="#page-title"><span>001</span> 교육을 따라가며, 지금 확인한 것</a>
             <!-- BLOG_INDEX_END -->
           </div>
           <div class="rail-block">
             <p class="rail-label">RELATED SHORTS</p>
-            <a class="rail-link" href="#page-title"><span>001</span> 피지컬 AI란 무엇인가</a>
-            <a class="rail-link" href="#page-title"><span>002</span> 보고·판단·움직이기</a>
-            <a class="rail-link" href="#page-title"><span>003</span> 현실 세계가 어려운 이유</a>
+            <a class="rail-link" href="#page-title"><span>001</span> 로봇 팔 끝에는 왜 여러 도구를 달까</a>
+            <a class="rail-link" href="#page-title"><span>002</span> 로봇은 전원과 열을 같이 설계해야 한다</a>
+            <a class="rail-link" href="#page-title"><span>003</span> 로봇 시스템 그림 한 장을 읽는 법</a>
           </div>
           <div class="rail-block rail-note">
             <p class="rail-label">WRITING RULE</p>
-            <p>확인한 것과 아직 확인하지 못한 것을 문장 안에서 구분한다.</p>
+            <p>현재 확인한 것과 다음 수업 계획을 완료한 일처럼 섞지 않는다.</p>
           </div>
         </aside>
       </section>
