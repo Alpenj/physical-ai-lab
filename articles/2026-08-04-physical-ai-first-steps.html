@@ -43,7 +43,7 @@
       <section class="article-shell" id="journal">
         <article class="article">
           <p class="article-lede">
-            처음에는 Physical AI를 너무 크게 생각했다. 거대한 모델, 값비싼 장비, 복잡한 시뮬레이터를 먼저 알아야 시작할 수 있다고 생각했다. 그런데 DAPIER에서 첫 수업 기록을 다시 읽고, 레포의 작은 로봇암 프로젝트를 따라가 보니 시작점은 훨씬 단순했다. <strong>현재 상태를 읽고, 다음 행동을 만들고, 결과를 다시 확인하는 것.</strong>
+            처음에는 Physical AI를 너무 크게 생각했다. 거대한 모델, 값비싼 장비, 복잡한 시뮬레이터를 먼저 알아야 시작할 수 있다고 생각했다. 그런데 국비 Physical AI 교육을 들으며 내가 DAPIER에 정리해 둔 첫 수업 기록과 로봇암 실습 메모를 다시 읽어 보니, 시작점은 훨씬 단순했다. <strong>현재 상태를 읽고, 다음 행동을 만들고, 결과를 다시 확인하는 것.</strong>
           </p>
 
           <div class="reading-time">
@@ -68,9 +68,9 @@
 
           <section class="article-section" id="system">
             <p class="section-index">02</p>
-            <h2>레포를 읽으며 흐름을 작게 줄여 봤다</h2>
+            <h2>교육 실습 기록에서 흐름을 작게 줄여 봤다</h2>
             <p>
-              <a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">DAPIER 레포</a>의 README에는 ROS 2, Arduino Uno, 네 개의 서보, RViz와 Gazebo가 연결된 로봇암 프로젝트가 정리되어 있다. 여기서 특히 눈에 들어온 것은 거창한 모델이 아니라 메시지와 단위의 경계였다.
+              국비 교육을 들으며 내가 정리한 <a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">DAPIER 레포</a>의 README에는 ROS 2, Arduino Uno, 네 개의 서보, RViz와 Gazebo를 연결해 본 로봇암 실습 구조가 적혀 있다. 이 레포를 새로 공부하는 것이 아니라, 내가 배운 내용을 다시 설명하기 위해 기록을 꺼내 본 것이다. 그 과정에서 특히 눈에 들어온 것은 거창한 모델이 아니라 메시지와 단위의 경계였다.
             </p>
             <div class="flow-diagram" aria-label="DAPIER 로봇암의 데이터 흐름">
               <div class="flow-node"><span>01</span><strong>JointState</strong><small>ROS 2 / radian</small></div>
@@ -92,7 +92,7 @@
             <p class="section-index">03</p>
             <h2>첫날부터 범위를 줄인 이유</h2>
             <p>
-              DAPIER 학습 기록에는 프로젝트를 <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 나누라는 기준이 남아 있다. 이 기준이 마음에 들었다. 자연어 명령, 이동, 양팔 조작, imitation learning을 한 번에 넣으면 무엇이 실패했는지 설명하기 어렵기 때문이다.
+              교육을 들으며 정리해 둔 DAPIER 기록에는 프로젝트를 <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 나누자는 기준이 남아 있다. 이 기준이 마음에 들었다. 자연어 명령, 이동, 양팔 조작, imitation learning을 한 번에 넣으면 무엇이 실패했는지 설명하기 어렵기 때문이다.
             </p>
             <div class="decision-grid">
               <div class="decision-row"><span class="decision-tag keep">남길 것</span><p>작은 행동 하나를 끝까지 기록하고, 성공 조건과 중단 이유를 적는다.</p></div>
@@ -146,12 +146,12 @@
             <p class="section-index">SOURCES</p>
             <h2>이 글을 쓰는 데 참고한 기록</h2>
             <ul>
-              <li>DAPIER 개인 학습 기록: Physical AI 방향·프로젝트 범위, 2026-07-06</li>
-              <li>DAPIER 개인 학습 기록: 이미테이션 러닝을 처음 시작하는 90분 실습</li>
-              <li>DAPIER 개인 학습 기록: NVIDIA Physical AI 강의 심층 노트</li>
-              <li><a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">Alpenj/DAPIER</a> README: ROS 2·Arduino·RViz·Gazebo 로봇암 구조</li>
+              <li>DAPIER 개인 학습 기록: 국비 Physical AI 교육 중 정리한 Physical AI 방향·프로젝트 범위, 2026-07-06</li>
+              <li>DAPIER 개인 학습 기록: 국비 교육 중 정리한 이미테이션 러닝 90분 실습</li>
+              <li>DAPIER 개인 학습 기록: 국비 교육 중 정리한 NVIDIA Physical AI 강의 노트</li>
+              <li><a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">Alpenj/DAPIER</a> README: 내가 정리한 ROS 2·Arduino·RViz·Gazebo 로봇암 실습 구조</li>
             </ul>
-            <p class="source-boundary">개인 경로, 원문 전사, 계정 정보는 공개하지 않고 학습 개념과 공개 레포의 구조만 재구성했다.</p>
+            <p class="source-boundary">이 글은 국비 교육을 들으며 내가 정리한 학습·실습 기록을 다시 설명한 것이다. 개인 경로, 원문 전사, 계정 정보는 공개하지 않고 공개 레포에 남긴 구조만 재구성했다.</p>
           </section>
         </article>
 
