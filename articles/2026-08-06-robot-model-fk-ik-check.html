@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="로봇 모델을 사이에 둔 정기구학과 역기구학의 관계를 현재 수업과 공개 DAPIER 기록으로 확인하는 진행 학습 기록.">
+    <meta name="description" content="로봇 모델을 사이에 둔 정기구학과 역기구학의 관계를 현재 수업과 세 Shorts로 정리하는 진행 학습 기록.">
     <title>Physical AI Lab | 002 로봇 모델이 먼저 있어야 하는 이유</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
@@ -60,9 +60,9 @@
 
           <section class="article-section" id="system">
             <p class="section-index">02</p>
-            <h2>DAPIER 공개 기록에서 확인한 경계</h2>
-            <p>공개한 DAPIER에서도 이 경계를 확인했다. 공개 README와 시뮬레이션 설명은 먼저 RViz·Gazebo에서 관절과 controller 흐름을 확인하고, 화면의 움직임을 실제 서보 동작으로 해석하지 말라고 구분한다. 공개 URDF에는 네 회전 관절과 라디안 범위가 적혀 있고, 브리지는 <code>JointState</code>를 관절 이름으로 매핑한 뒤 라디안을 서보 도 단위로 바꾸고 60~120도로 제한한다.</p>
-            <div class="flow-diagram" aria-label="공개 DAPIER의 관절 데이터 흐름">
+            <h2>내가 배운 내용을 기록하는 방식</h2>
+            <p>DAPIER는 내가 수업과 실습에서 배운 내용을 정리해 가는 내 학습 레포다. 이 글에서 DAPIER를 외부 교재나 권위 자료처럼 참조하는 것은 아니다. 오늘의 이해는 세 Shorts와 현재 수업에서 다룬 모델·FK·IK를 내 말로 다시 적은 것이고, DAPIER에는 앞으로 직접 확인한 코드와 결과가 계속 쌓일 예정이다.</p>
+            <div class="flow-diagram" aria-label="현재 내가 이해한 관절 데이터 흐름">
               <div class="flow-node"><span>01</span><strong>JointState</strong><small>관절 이름 · radian</small></div>
               <div class="flow-arrow" aria-hidden="true">→</div>
               <div class="flow-node"><span>02</span><strong>Bridge</strong><small>이름 매핑 · degree</small></div>
@@ -71,14 +71,14 @@
               <div class="flow-arrow" aria-hidden="true">→</div>
               <div class="flow-node"><span>04</span><strong>Servo</strong><small>다음 확인 대상</small></div>
             </div>
-            <p>이것은 FK·IK를 실제 장치에서 실행했다는 증거가 아니다. 모델·단위·제약을 맞춰야 다음 계산을 믿을 수 있다는 공개 기록이며, 실제 손끝 목표를 넣어 해를 선택한 결과는 아직 확인하지 않았다. DAPIER를 새로 공부하는 것이 아니라, 내가 배운 내용을 공개 가능한 범위에서 다시 연결해 보는 중이다.</p>
+            <p>이 흐름은 현재 수업에서 이해한 구조를 간단히 그린 것이다. FK·IK를 실제 장치에서 실행했다는 증거로 쓰지 않으며, 실제 손끝 목표를 넣어 해를 선택한 결과도 아직 확인하지 않았다. 나는 DAPIER를 새로 공부하는 것이 아니라, 배운 내용을 내 학습 기록으로 정리해 가는 중이다.</p>
           </section>
 
           <section class="article-section">
             <p class="section-index">03</p>
             <h2>오늘 확인한 것과 아직 남은 것</h2>
             <div class="decision-grid">
-              <div class="decision-row"><span class="decision-tag keep">오늘 확인</span><p>세 Shorts가 같은 질문으로 이어지고, 공개 DAPIER 파일에서 관절 이름·단위·안전 범위를 읽을 수 있다.</p></div>
+              <div class="decision-row"><span class="decision-tag keep">오늘 확인</span><p>세 Shorts가 같은 질문으로 이어지고, 관절 이름·단위·안전 범위를 함께 봐야 한다는 점을 이해했다.</p></div>
               <div class="decision-row"><span class="decision-tag check">아직 미확인</span><p>실제 팔에 목표 손끝 자세를 넣어 IK 해를 고르고, 그 결과가 하드웨어에서 안전하게 도달하는지는 아직 실행하지 않았다.</p></div>
               <div class="decision-row"><span class="decision-tag defer">다음 확인</span><p>2링크 평면 팔의 FK와 간단한 수치 IK를 Python으로 계산하고, 같은 관절 순서와 timestamp로 결과를 비교한다.</p></div>
             </div>
@@ -93,13 +93,13 @@
 
           <section class="sources" id="sources">
             <p class="section-index">SOURCES</p>
-            <h2>공개 근거와 출처 경계</h2>
+            <h2>오늘의 Shorts와 기록 경계</h2>
             <ul>
-              <li><a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">Alpenj/DAPIER README</a>: 내가 작성 중인 로봇 학습 기록과 모델·시뮬레이션·실물 제어의 구분</li>
-              <li><a href="https://github.com/Alpenj/DAPIER/blob/main/jdcobot100_sim/README.md" target="_blank" rel="noreferrer"><code>jdcobot100_sim/README.md</code></a>: RViz·Gazebo와 실제 서보의 검증 범위</li>
-              <li><a href="https://github.com/Alpenj/DAPIER/blob/main/ros_arm/urdf/ros_arm.urdf" target="_blank" rel="noreferrer"><code>ros_arm/urdf/ros_arm.urdf</code></a> 및 <a href="https://github.com/Alpenj/DAPIER/blob/main/ros_arm/ros_arm/ros_arm_bridge.py" target="_blank" rel="noreferrer"><code>ros_arm/ros_arm/ros_arm_bridge.py</code></a>: 관절 모델·단위 변환·명령 제한</li>
+              <li><a href="https://youtube.com/shorts/1Mv-_YQaEX0" target="_blank" rel="noreferrer">로봇 모델은 왜 실제 로봇보다 먼저 필요한가</a></li>
+              <li><a href="https://youtube.com/shorts/7NG3f8A-CEQ" target="_blank" rel="noreferrer">정기구학: 관절 각도로 손끝 위치 구하기</a></li>
+              <li><a href="https://youtube.com/shorts/UTdN92YN2kY" target="_blank" rel="noreferrer">역기구학: 손끝 목표에서 관절 각도 찾기</a></li>
             </ul>
-            <p class="source-boundary">교육은 2026년 11월까지 진행 중이다. Notion은 비공개 학습 맥락으로만 사용했고, 이 글에는 개인 URL·페이지 ID·경로·원문 전사를 넣지 않았다. 공개 DAPIER 파일에 직접 적힌 범위와 내가 아직 확인하지 못한 범위를 나누어 기록한다.</p>
+            <p class="source-boundary">교육은 2026년 11월까지 진행 중이다. Notion은 비공개 학습 원본으로만 사용했고, 이 글에는 개인 URL·페이지 ID·경로·원문 전사를 넣지 않았다. DAPIER는 내가 배운 내용을 정리해 가는 개인 학습 레포이며, 이번 글은 DAPIER를 공부하거나 외부 자료로 참조한 글이 아니라 현재 수업과 Shorts를 바탕으로 내 이해와 다음 확인을 남기는 기록이다.</p>
           </section>
         </article>
 
