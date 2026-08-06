@@ -1,4 +1,4 @@
 date,slug,title,core_claim,category,source_shorts,publication_url,status
 2026-08-04,physical-ai-first-steps,"Physical AI 교육을 따라가며, 지금 확인한 것과 다음 단계","교육이 진행 중인 현재 상태와 11월까지의 다음 실습을 완료한 결과와 구분해 기록한다.",진행 기록,ope9oxZ4eQA;REMw3MI8_O4;kqI3V3L8xC0,https://alpenj.github.io/physical-ai-lab/articles/2026-08-04-physical-ai-first-steps.html,published
-2026-08-06,robot-model-fk-ik-check,"로봇 모델이 먼저 있어야 하는 이유: 관절각에서 손끝까지","정기구학과 역기구학은 로봇 모델의 관절·좌표·제약을 기준으로 손끝 목표와 관절 명령을 서로 검증하는 고리다.",로봇 모델링,1Mv-_YQaEX0;7NG3f8A-CEQ;UTdN92YN2kY,,draft
+2026-08-06,robot-model-fk-ik-check,"로봇 모델이 먼저 있어야 하는 이유: 관절각에서 손끝까지","정기구학과 역기구학은 로봇 모델의 관절·좌표·제약을 기준으로 손끝 목표와 관절 명령을 서로 검증하는 고리다.",로봇 모델링,1Mv-_YQaEX0;7NG3f8A-CEQ;UTdN92YN2kY,https://alpenj.github.io/physical-ai-lab/articles/2026-08-06-robot-model-fk-ik-check.html,published
 
