@@ -74,7 +74,7 @@ a { color: inherit; }
   margin: 0 auto;
   max-width: 1440px;
   min-height: 570px;
-  padding: 86px max(24px, calc((100vw - var(--max)) / 2)) 74px;
+  padding: 86px clamp(24px, calc((100vw - var(--max)) / 2), 130px) 74px;
 }
 
 .hero-copy { align-self: center; max-width: 680px; }
@@ -280,3 +280,4 @@ h1 { font-size: clamp(38px, 5vw, 70px); letter-spacing: -0.03em; line-height: 1.
   .roadmap-list li { grid-template-columns: 28px minmax(0, 1fr); }
   .roadmap-list em { grid-column: 2; }
 }
+
