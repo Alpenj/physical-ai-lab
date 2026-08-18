@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="피드백 루프·PID·튜닝을 같은 목표와 측정 기록으로 이어 보며 현재 제어 수업에서 확인한 것과 다음 실습을 남기는 학습 기록.">
+    <title>Physical AI Lab | 005 로봇은 왜 움직인 뒤 다시 봐야 할까</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Physical AI Lab home">
+        <span class="brand-mark">PA</span>
+        <span>Physical AI Lab</span>
+      </a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="../index.html#posts">학습 기록</a>
+        <a href="#journal">현재 이해</a>
+        <a href="#sources">출처</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-band" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">LEARNING LOG · 005 / COURSE IN PROGRESS · 2026.08.18</p>
+          <h1 id="page-title">로봇은 왜<br>움직인 뒤 다시 봐야 할까</h1>
+          <p class="hero-summary">피드백 루프에서 PID 항을 거쳐, 같은 조건의 응답 비교로 이어지는 현재 제어 학습 기록.</p>
+          <div class="hero-meta" aria-label="글 정보">
+            <span>교육 진행 중</span>
+            <span>현재: 피드백·PID·튜닝</span>
+            <span>다음: 응답 로그 확인</span>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="../assets/feedback-pid-tuning-v1.svg" alt="목표와 실제 상태를 다시 읽는 피드백, 오차를 P·I·D로 나누는 제어, 흔들림과 안정 응답을 비교하는 튜닝을 세 칸으로 연결한 도식">
+          <figcaption>움직임을 한 번의 명령이 아니라 측정·보정·비교의 고리로 보는 질문.</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-shell" id="journal">
+        <article class="article">
+          <p class="article-lede">로봇은 왜 움직인 뒤 다시 봐야 할까? 오늘 본 세 Shorts는 이 질문을 피드백 제어, PID, 튜닝이라는 한 흐름으로 묶었다. 피드백은 센서로 현재 상태를 다시 읽고 목표와의 차이인 오차를 구하는 일이다. PID는 그 오차를 지금의 크기(P), 오래 쌓인 정도(I), 변하는 속도(D)로 나누어 다음 명령을 계산한다. 튜닝은 숫자를 크게 만드는 일이 아니라 같은 목표에서 응답을 다시 비교하는 과정이다.</p>
+
+          <div class="reading-time">
+            <span>읽는 시간 5분</span>
+            <span>측정 → 오차 → PID → 응답 비교</span>
+          </div>
+
+          <section class="article-section">
+            <p class="section-index">01</p>
+            <h2>지금 수업에서 다시 이어 본 세 장면</h2>
+            <p>첫 Shorts의 피드백 루프는 “움직인 뒤 다시 본다”는 순서를 보여 줬다. 실제 위치가 목표에서 벗어나면 제어기가 다음 보정을 만든다. 두 번째 Shorts의 PID는 같은 오차를 세 관점으로 번역한다. P는 지금 큰 차이에 빠르게 반응하고, I는 작은 차이가 오래 남았는지 보며, D는 흔들림의 방향을 살핀다. 마지막 Shorts의 튜닝은 한 항목만 바꾸고 동일한 목표에서 진동 크기와 멈추는 시간을 비교하라고 말한다. 그래서 세 영상은 센서 확인 → 오차 분해 → 응답 평가의 순서로 연결된다.</p>
+            <p>초보자인 내가 이해한 PID는 만능 버튼이 아니다. 마찰, dead zone, 출력 한계가 있으면 공식만으로 결과를 단정할 수 없다. 그래서 실제 장비는 속도와 힘을 낮추고 주변을 비운 뒤 조건을 고정해 다시 본다.</p>
+          </section>
+
+          <section class="article-section" id="system">
+            <p class="section-index">02</p>
+            <h2>오늘 확인한 것과 아직 남은 것</h2>
+            <p>현재 커리큘럼 6단계 ‘계획하고 정확히 움직이기’에서 target, measured value, error, output을 같은 시간축에 놓는 법을 배우는 중이다. 내가 배운 내용을 정리해 가는 개인 학습 레포인 DAPIER에도 기록이 계속 쌓여 간다. 오늘 확인한 것은 개념의 연결과 비교 기준이며, 실제 모터·엔코더 배선과 일정한 sample time의 제어 루프는 아직 실행하지 않았다.</p>
+            <p>다음 수업 전에는 안전한 저속·짧은 구간에서 target, time, encoder, error, PWM 다섯 열을 남기는 방법을 점검하겠다. 하드웨어가 없으면 target step을 가정해 P·PI·PID 응답 표를 만들고 gain을 한 번에 하나만 바꾸겠다. 중단 조건과 출력 제한도 함께 기록할 예정이다.</p>
+          </section>
+
+          <section class="article-section">
+            <p class="section-index">03</p>
+            <h2>11월까지의 계획과 다음 질문</h2>
+            <p>숙련자에게 남길 질문은 데이터 계약의 경계다. target·feedback 단위, timestamp와 실제 적용 시각, 흔들리는 sample time에서 D항 제한, saturation·안전 정지의 평가 기록을 어떻게 고정해야 비교가 재현될까?</p>
+            <p><strong>11월까지의 계획:</strong> 작은 시뮬레이션 또는 안전한 실습에서 응답 로그를 반복하고 센서·제어·평가를 한 실험 단위로 묶겠다. 교육은 진행 중이며, 직접 확인한 수치와 실패만 차례로 추가하겠다.</p>
+          </section>
+
+          <section class="sources" id="sources">
+            <p class="section-index">SOURCES</p>
+            <h2>2026.08.18 Shorts와 기록 경계</h2>
+            <ul>
+              <li><a href="https://youtube.com/shorts/bMf9Syd4jPk" target="_blank" rel="noreferrer">피드백 제어: 움직인 뒤 다시 보고 고치기</a> <small>2026.08.18</small></li>
+              <li><a href="https://youtube.com/shorts/5e-MwNlGI2k" target="_blank" rel="noreferrer">PID 제어를 가장 쉽게 이해하는 방법</a> <small>2026.08.18</small></li>
+              <li><a href="https://youtube.com/shorts/jdSwEeOg_o4" target="_blank" rel="noreferrer">PID 튜닝은 숫자를 맞추는 게임이 아니다</a> <small>2026.08.18</small></li>
+            </ul>
+            <p class="source-boundary">교육은 2026년 11월까지 진행 중이다. 비공개 수업 메모는 현재 학습 맥락으로만 사용했고 개인 URL·페이지 ID·경로·원문 전사는 넣지 않았다. DAPIER는 내가 배운 내용을 정리해 가는 개인 학습 레포이며, 이번 글은 공개 DAPIER 코드·커밋·실행 결과를 근거로 삼지 않았다.</p>
+          </section>
+        </article>
+
+        <aside class="side-rail" aria-label="학습 기록 정보">
+          <div class="rail-block">
+            <p class="rail-label">CURRENT TRACK</p>
+            <h3>피드백·PID·튜닝 → 11월까지</h3>
+            <p>움직임을 다시 측정하고 오차를 나눈 뒤, 같은 조건의 응답으로 판단하는 중이다.</p>
+          </div>
+          <div class="rail-block">
+            <p class="rail-label">LATEST DEEP DIVES</p>
+            <!-- BLOG_INDEX_START -->
+            <a class="rail-link" href="#page-title"><span>005</span> 움직인 뒤 다시 보는 이유</a>
+            <a class="rail-link" href="2026-08-13-ros2-communication-contract.html"><span>004</span> 어떤 통신을 고를까</a>
+            <a class="rail-link" href="2026-08-11-pose-tracking-slam-state.html"><span>003</span> 시간과 지도 속 상태</a>
+            <a class="rail-link" href="2026-08-06-robot-model-fk-ik-check.html"><span>002</span> 로봇 모델이 먼저 필요한 이유</a>
+            <a class="rail-link" href="2026-08-04-physical-ai-first-steps.html"><span>001</span> 교육을 따라가며, 지금 확인한 것</a>
+            <!-- BLOG_INDEX_END -->
+          </div>
+          <div class="rail-block">
+            <p class="rail-label">RELATED SHORTS</p>
+            <a class="rail-link" href="https://youtube.com/shorts/bMf9Syd4jPk" target="_blank" rel="noreferrer"><span>01</span> 피드백 루프</a>
+            <a class="rail-link" href="https://youtube.com/shorts/5e-MwNlGI2k" target="_blank" rel="noreferrer"><span>02</span> PID 세 항</a>
+            <a class="rail-link" href="https://youtube.com/shorts/jdSwEeOg_o4" target="_blank" rel="noreferrer"><span>03</span> 같은 조건의 튜닝</a>
+          </div>
+          <div class="rail-block rail-note">
+            <p class="rail-label">WRITING RULE</p>
+            <p>현재 확인한 개념과 다음 실행 계획을 완료한 일처럼 섞지 않는다.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Physical AI Lab · learning in public, one verified step at a time.</span>
+      <a href="#top">맨 위로 ↑</a>
+    </footer>
+  </body>
+</html>
+
