@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">피드백 제어, PID 항, 튜닝 응답의 연결</title>
+  <desc id="desc">목표와 실제 상태를 다시 읽는 피드백, 오차를 P·I·D로 나누는 제어, 안정 응답과 흔들리는 응답을 비교하는 튜닝을 세 칸으로 보여 주는 도식.</desc>
+  <defs>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d827e"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b97824"/>
+    </marker>
+    <style>
+      .ink { fill: #17212b; font-family: "Noto Sans KR", "Segoe UI", sans-serif; }
+      .muted { fill: #65707b; font-family: "Noto Sans KR", "Segoe UI", sans-serif; }
+      .tiny { font-size: 18px; font-weight: 700; letter-spacing: .12em; }
+      .label { font-size: 24px; font-weight: 800; }
+      .body { font-size: 19px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="#eef3ef"/>
+  <path d="M 390 92 V 678 M 780 92 V 678" stroke="#d2ddd8" stroke-width="2"/>
+  <text x="56" y="62" class="muted tiny">움직인 뒤 다시 보고, 오차를 나누고, 같은 조건에서 비교한다</text>
+
+  <!-- feedback: target -> motion -> sensor -> correction -->
+  <g>
+    <text x="58" y="122" class="ink label">피드백</text>
+    <text x="58" y="153" class="muted body">목표와 실제 상태를 반복해서 읽기</text>
+    <line x1="86" y1="248" x2="334" y2="248" stroke="#0d827e" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="118" cy="248" r="18" fill="#0d827e"/>
+    <text x="78" y="215" class="ink body">목표</text>
+    <circle cx="286" cy="404" r="23" fill="#b97824"/>
+    <text x="247" y="454" class="ink body">실제</text>
+    <path d="M 118 276 C 118 370, 185 420, 260 419" fill="none" stroke="#0d827e" stroke-width="5" marker-end="url(#arrow-teal)"/>
+    <path d="M 309 386 C 356 344, 343 276, 303 255" fill="none" stroke="#0d827e" stroke-width="5" marker-end="url(#arrow-teal)"/>
+    <circle cx="196" cy="575" r="45" fill="#ffffff" stroke="#0d827e" stroke-width="4"/>
+    <path d="M 196 548 V 602 M 169 575 H 223" stroke="#0d827e" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 224 575 C 280 575, 305 518, 303 442" fill="none" stroke="#b97824" stroke-width="4" stroke-dasharray="9 10" marker-end="url(#arrow-amber)"/>
+    <text x="154" y="655" class="muted body">센서가 다시 읽고</text>
+    <text x="126" y="686" class="muted body">다음 보정을 만든다</text>
+  </g>
+
+  <!-- PID: error -> separate views -> command -->
+  <g>
+    <text x="448" y="122" class="ink label">PID</text>
+    <text x="448" y="153" class="muted body">같은 오차를 세 관점으로 나누기</text>
+    <circle cx="456" cy="332" r="24" fill="#b97824"/>
+    <text x="425" y="284" class="ink body">오차</text>
+    <path d="M 482 332 H 533" stroke="#b97824" stroke-width="5" marker-end="url(#arrow-amber)"/>
+    <path d="M 533 332 C 563 332, 566 248, 600 248" fill="none" stroke="#0d827e" stroke-width="4" marker-end="url(#arrow-teal)"/>
+    <path d="M 533 332 H 600" stroke="#0d827e" stroke-width="4" marker-end="url(#arrow-teal)"/>
+    <path d="M 533 332 C 563 332, 566 416, 600 416" fill="none" stroke="#0d827e" stroke-width="4" marker-end="url(#arrow-teal)"/>
+    <rect x="610" y="205" width="86" height="86" rx="16" fill="#ffffff" stroke="#0d827e" stroke-width="4"/>
+    <rect x="610" y="289" width="86" height="86" rx="16" fill="#ffffff" stroke="#0d827e" stroke-width="4"/>
+    <rect x="610" y="373" width="86" height="86" rx="16" fill="#ffffff" stroke="#0d827e" stroke-width="4"/>
+    <text x="643" y="262" class="ink" font-size="42" font-weight="800">P</text>
+    <text x="643" y="346" class="ink" font-size="42" font-weight="800">I</text>
+    <text x="643" y="430" class="ink" font-size="42" font-weight="800">D</text>
+    <text x="709" y="258" class="muted body">지금</text>
+    <text x="709" y="342" class="muted body">누적</text>
+    <text x="709" y="426" class="muted body">변화</text>
+    <path d="M 696 248 C 720 248, 724 332, 749 332" fill="none" stroke="#0d827e" stroke-width="4"/>
+    <path d="M 696 332 H 749" stroke="#0d827e" stroke-width="4"/>
+    <path d="M 696 416 C 720 416, 724 332, 749 332" fill="none" stroke="#0d827e" stroke-width="4"/>
+    <circle cx="758" cy="332" r="16" fill="#0d827e"/>
+    <path d="M 775 332 H 812" stroke="#0d827e" stroke-width="5" marker-end="url(#arrow-teal)"/>
+    <text x="596" y="535" class="muted body">명령</text>
+    <text x="548" y="575" class="muted body">오차의 크기·누적·변화를</text>
+    <text x="549" y="606" class="muted body">따로 살펴 합친다</text>
+  </g>
+
+  <!-- tuning: compare response traces -->
+  <g>
+    <text x="838" y="122" class="ink label">튜닝</text>
+    <text x="838" y="153" class="muted body">같은 목표에서 응답을 비교하기</text>
+    <rect x="838" y="205" width="300" height="285" rx="18" fill="#ffffff"/>
+    <line x1="866" y1="350" x2="1110" y2="350" stroke="#0d827e" stroke-width="3" stroke-dasharray="7 8"/>
+    <path d="M 866 470 C 890 470, 896 242, 924 242 C 950 242, 950 452, 978 452 C 1000 452, 1004 274, 1029 274 C 1053 274, 1054 415, 1080 415 C 1090 415, 1100 354, 1110 354" fill="none" stroke="#b97824" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 866 470 C 902 470, 914 388, 940 354 C 963 324, 983 346, 1004 350 C 1032 354, 1055 350, 1110 350" fill="none" stroke="#0d827e" stroke-width="6" stroke-linecap="round"/>
+    <text x="861" y="532" class="muted body">흔들림</text>
+    <line x1="952" y1="524" x2="1002" y2="524" stroke="#b97824" stroke-width="5"/>
+    <text x="1015" y="532" class="muted body">안정 응답</text>
+    <path d="M 890 600 H 1086" stroke="#b97824" stroke-width="4" marker-end="url(#arrow-amber)"/>
+    <text x="857" y="642" class="muted body">한 항목만 조정하고</text>
+    <text x="857" y="673" class="muted body">같은 조건에서 다시 본다</text>
+  </g>
+</svg>
+
