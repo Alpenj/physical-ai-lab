@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">전체 경로를 궤적으로 바꾸고 장애물 앞에서 안전 여유를 확인하는 세 단계</title>
+  <desc id="desc">왼쪽은 지도 전체에서 출발점과 목표를 잇는 경로, 가운데는 그 경로를 시간에 따른 부드러운 궤적으로 바꾸는 장면, 오른쪽은 장애물 주변의 안전 여유를 확인하며 경로를 멈추거나 우회하는 장면이다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102637"/>
+      <stop offset="1" stop-color="#0b1b29"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7f3"/>
+      <stop offset="1" stop-color="#e7efeb"/>
+    </linearGradient>
+    <marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#1a9c96"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#df9d48"/>
+    </marker>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#c6d4cf" stroke-width="1" opacity=".75"/>
+    </pattern>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#07131e" flood-opacity=".25"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <path d="M0 112H1200" stroke="#29495a" stroke-width="1"/>
+  <text x="72" y="74" fill="#9bc7c5" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="3">경로는 한 번의 선이 아니라, 검증되는 변환이다</text>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="52" y="150" width="344" height="514" rx="18" fill="url(#panel)"/>
+    <rect x="428" y="150" width="344" height="514" rx="18" fill="url(#panel)"/>
+    <rect x="804" y="150" width="344" height="514" rx="18" fill="url(#panel)"/>
+  </g>
+
+  <!-- global path -->
+  <g transform="translate(52 150)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">전체 경로</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">지도 안에서 길을 고른다</text>
+    <rect x="28" y="108" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <rect x="28" y="108" width="288" height="270" rx="10" fill="url(#grid)"/>
+    <path d="M52 330 L120 282 L171 302 L219 225 L286 164" fill="none" stroke="#a94b43" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity=".15"/>
+    <path d="M52 330 L120 282 L171 302 L219 225 L286 164" fill="none" stroke="#0d827e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+    <circle cx="52" cy="330" r="12" fill="#0d827e"/>
+    <circle cx="286" cy="164" r="12" fill="#df9d48"/>
+    <path d="M87 183h42v44H87z M192 134h36v48h-36z M206 276h52v44h-52z" fill="#243e4c" opacity=".9"/>
+    <text x="41" y="412" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14" font-weight="700">출발</text>
+    <text x="262" y="146" fill="#b97824" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14" font-weight="700">목표</text>
+    <path d="M56 438H288" stroke="#b8c9c3" stroke-width="2"/>
+    <text x="28" y="468" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">planner는 큰 방향을 정하지만</text>
+    <text x="28" y="494" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">아직 속도와 충돌 여유는 모른다.</text>
+  </g>
+
+  <!-- trajectory -->
+  <g transform="translate(428 150)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">시간의 궤적</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">선을 움직임으로 바꾼다</text>
+    <rect x="28" y="108" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <path d="M54 316 C92 260 116 288 145 244 S201 164 236 205 S276 278 300 144" fill="none" stroke="#a94b43" stroke-width="20" opacity=".15" stroke-linecap="round"/>
+    <path d="M54 316 C92 260 116 288 145 244 S201 164 236 205 S276 278 300 144" fill="none" stroke="#0d827e" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+    <path d="M54 336H304M54 336V140" fill="none" stroke="#8ea7a5" stroke-width="2"/>
+    <path d="M84 326V346M143 326V346M202 326V346M261 326V346" stroke="#8ea7a5" stroke-width="2"/>
+    <path d="M44 284H64M44 232H64M44 180H64" stroke="#8ea7a5" stroke-width="2"/>
+    <circle cx="54" cy="316" r="8" fill="#0d827e"/>
+    <circle cx="300" cy="144" r="8" fill="#df9d48"/>
+    <path d="M56 438H288" stroke="#b8c9c3" stroke-width="2"/>
+    <text x="28" y="468" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">속도·가속도를 붙여야</text>
+    <text x="28" y="494" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">실제로 따라갈 동작이 된다.</text>
+  </g>
+
+  <!-- safety margin -->
+  <g transform="translate(804 150)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">안전 여유</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">장애물 앞에서 다시 검사한다</text>
+    <rect x="28" y="108" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <path d="M176 137 L236 137 L279 185 L279 253 L236 301 L176 301 L133 253 L133 185 Z" fill="#a94b43" opacity=".82"/>
+    <path d="M176 120 L253 120 L296 178 L296 260 L253 318 L176 318 L116 260 L116 178 Z" fill="none" stroke="#df9d48" stroke-width="12" opacity=".36"/>
+    <path d="M48 332 C82 328 98 306 118 277 C131 258 140 245 156 235" fill="none" stroke="#0d827e" stroke-width="6" stroke-linecap="round"/>
+    <path d="M48 332 C90 350 112 346 139 319 C157 301 157 278 156 235" fill="none" stroke="#df9d48" stroke-width="4" stroke-dasharray="9 10" marker-end="url(#arrow-amber)"/>
+    <circle cx="48" cy="332" r="9" fill="#0d827e"/>
+    <path d="M56 438H288" stroke="#b8c9c3" stroke-width="2"/>
+    <text x="28" y="468" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">costmap과 충돌 검사가</text>
+    <text x="28" y="494" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">멈춤·우회를 결정하게 한다.</text>
+  </g>
+
+  <path d="M396 406H420" stroke="#94c8c5" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <path d="M772 406H796" stroke="#94c8c5" stroke-width="3" marker-end="url(#arrow-teal)"/>
+  <text x="600" y="716" text-anchor="middle" fill="#aebfc4" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">전체 계획 → 실행 가능한 궤적 → 안전한 선택</text>
+</svg>
+
