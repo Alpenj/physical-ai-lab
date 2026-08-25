@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">큰 경로에서 눈앞 장애물 대응과 정지까지 이어지는 로컬 주행 판단</title>
+  <desc id="desc">전체 경로를 기준으로 삼고, 가까운 장애물을 만나면 로컬 경로를 바꾸며, 안전 여유가 부족하면 멈추는 세 장면을 보여주는 도식이다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12283a"/><stop offset="1" stop-color="#0a1a27"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f8f4"/><stop offset="1" stop-color="#e8f0eb"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#c2d2cb" stroke-width="1"/></pattern>
+    <marker id="teal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#148d88"/></marker>
+    <marker id="amber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#d99943"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#07131e" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="72" y="72" fill="#a8d0c9" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="2">눈앞의 장애물은 경로를 다시 묻게 한다</text>
+  <g filter="url(#shadow)">
+    <rect x="52" y="140" width="344" height="510" rx="18" fill="url(#card)"/>
+    <rect x="428" y="140" width="344" height="510" rx="18" fill="url(#card)"/>
+    <rect x="804" y="140" width="344" height="510" rx="18" fill="url(#card)"/>
+  </g>
+  <g transform="translate(52 140)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">큰 경로</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">지도 전체의 기준선</text>
+    <rect x="28" y="105" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <rect x="28" y="105" width="288" height="270" rx="10" fill="url(#grid)"/>
+    <path d="M54 330L102 290L170 252L238 208L296 150" fill="none" stroke="#148d88" stroke-width="7" stroke-linecap="round" marker-end="url(#teal)"/>
+    <circle cx="54" cy="330" r="11" fill="#148d88"/><circle cx="296" cy="150" r="11" fill="#d99943"/>
+    <rect x="132" y="172" width="56" height="36" rx="5" fill="#2b4652"/><rect x="220" y="280" width="42" height="52" rx="5" fill="#2b4652"/>
+    <text x="28" y="421" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">planner가 출발과 목표 사이</text>
+    <text x="28" y="447" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">전체 방향을 먼저 고른다.</text>
+  </g>
+  <g transform="translate(428 140)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">눈앞 재계획</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">센서가 가까운 변화를 반영</text>
+    <rect x="28" y="105" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <path d="M54 330C104 278 142 250 188 228C230 208 258 192 300 150" fill="none" stroke="#148d88" stroke-width="5" stroke-dasharray="11 10" opacity=".35"/>
+    <path d="M54 330C100 342 126 320 150 286C174 251 196 206 224 184C250 164 276 164 300 150" fill="none" stroke="#d99943" stroke-width="7" stroke-linecap="round" marker-end="url(#amber)"/>
+    <path d="M192 152L254 152L282 190L282 246L254 284L192 284L164 246L164 190Z" fill="#a94b43" opacity=".88"/>
+    <path d="M192 134L266 134L300 182L300 254L266 302L192 302L150 254L150 182Z" fill="none" stroke="#d99943" stroke-width="10" opacity=".35"/>
+    <text x="28" y="421" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">장애물을 만나면 가까운 구간의</text>
+    <text x="28" y="447" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">경로를 우회해 다시 고른다.</text>
+  </g>
+  <g transform="translate(804 140)">
+    <text x="28" y="48" fill="#0d827e" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="17" font-weight="800">정지 우선</text>
+    <text x="28" y="76" fill="#53656c" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">안전 여유가 없으면 멈춘다</text>
+    <rect x="28" y="105" width="288" height="270" rx="10" fill="#dce9e4"/>
+    <path d="M54 330C104 342 124 322 150 286C176 250 192 214 212 194" fill="none" stroke="#d99943" stroke-width="6" stroke-dasharray="11 10"/>
+    <path d="M54 330C110 344 136 328 160 300" fill="none" stroke="#148d88" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="160" cy="300" r="27" fill="none" stroke="#c65f4e" stroke-width="7"/>
+    <path d="M148 288L172 312M172 288L148 312" stroke="#c65f4e" stroke-width="7" stroke-linecap="round"/>
+    <path d="M192 152L254 152L282 190L282 246L254 284L192 284L164 246L164 190Z" fill="#a94b43" opacity=".88"/>
+    <path d="M192 134L266 134L300 182L300 254L266 302L192 302L150 254L150 182Z" fill="none" stroke="#d99943" stroke-width="10" opacity=".35"/>
+    <text x="28" y="421" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">충돌 여유와 정지 한계를 넘으면</text>
+    <text x="28" y="447" fill="#314954" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">최적화보다 정지가 먼저다.</text>
+  </g>
+  <path d="M396 395H420" stroke="#9bc8c1" stroke-width="3" marker-end="url(#teal)"/><path d="M772 395H796" stroke="#9bc8c1" stroke-width="3" marker-end="url(#teal)"/>
+  <text x="600" y="708" text-anchor="middle" fill="#b4c5c7" font-family="Noto Sans KR, Segoe UI, sans-serif" font-size="14">전체 기준 → 로컬 우회 → 안전 정지</text>
+</svg>
+
