@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="글로벌 경로를 기준으로 눈앞 장애물에 로컬로 대응하고, 안전 여유가 없으면 멈추는 현재 Nav2 학습 기록.">
+    <title>Physical AI Lab | 007 로봇은 눈앞 장애물 앞에서 언제 멈춰야 할까</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Physical AI Lab home"><span class="brand-mark">PA</span><span>Physical AI Lab</span></a>
+      <nav class="site-nav" aria-label="주요 메뉴"><a href="../index.html#posts">학습 기록</a><a href="#journal">현재 이해</a><a href="#sources">출처</a></nav>
+    </header>
+    <main id="top">
+      <section class="hero-band" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">LEARNING LOG · 007 / COURSE IN PROGRESS · 2026.08.25</p>
+          <h1 id="page-title">로봇은 눈앞 장애물 앞에서<br>언제 멈춰야 할까</h1>
+          <p class="hero-summary">전체 경로를 기준으로 가까운 구간을 다시 고르고, 안전 여유가 없으면 멈추는 로컬 주행 판단을 정리한다.</p>
+          <div class="hero-meta" aria-label="글 정보"><span>교육 진행 중</span><span>현재: 로컬 경로·장애물 회피</span><span>다음: costmap·정지 조건 비교</span></div>
+        </div>
+        <figure class="hero-figure">
+          <img src="../assets/local-planning-stop-safety-v1.svg" alt="전체 경로를 기준으로 삼고, 눈앞 장애물을 만나 로컬 경로를 우회하며, 안전 여유가 부족하면 멈추는 세 단계 도식">
+          <figcaption>길 전체를 정한 뒤에도, 눈앞의 한 장면은 다시 판단해야 한다.</figcaption>
+        </figure>
+      </section>
+      <section class="article-shell" id="journal">
+        <article class="article">
+          <p class="article-lede">길을 찾았는데도 로봇은 왜 바로 가지 못할까? 세 Shorts는 큰 경로, 눈앞 재계획, 정지 우선의 순서를 보여 줬다. 경로는 센서가 새 상황을 읽을 때마다 다시 묻는 약속이다.</p>
+          <div class="reading-time"><span>읽는 시간 5분</span><span>큰 경로 → 로컬 우회 → 안전 정지</span></div>
+          <section class="article-section">
+            <p class="section-index">01</p>
+            <h2>세 Shorts가 이어 준 눈앞의 판단</h2>
+            <p>8월 20일 영상은 지도 전체의 기준 경로를, 8월 21일 영상은 가까운 장애물을 보고 짧은 구간을 다시 고르는 로컬 경로를 보여 줬다. 8월 24일 영상은 우회가 불확실하면 최적화보다 정지가 먼저라고 말한다. 세 편은 “큰 방향 → 눈앞 재계획 → 안전 정지”로 이어진다.</p>
+          </section>
+          <section class="article-section" id="system">
+            <p class="section-index">02</p>
+            <h2>오늘 이해한 것과 아직 확인하지 못한 것</h2>
+            <p>현재는 6단계 ‘계획하고 정확히 움직이기’에서 로컬 계획과 장애물 회피를 다시 보는 중이다. 로컬 플래너는 센서가 갱신한 costmap을 보고 지금 따라갈 후보를 고르는 층이다. 공개 학습 기록에서 Jazzy·gz-sim Nav2 목표 전송과 <code>SUCCEEDED</code>는 확인했지만, 모든 장애물 배치의 안전을 뜻하지는 않는다. 우회와 정지의 경계, timestamp 지연, 실제 정지거리는 아직 미확인이다.</p>
+            <p>다음 수업 전에는 목표와 속도 제한을 고정하고 장애물을 한 개씩 가까이 옮겨 선택·거부·정지 결과를 따로 기록하겠다.</p>
+          </section>
+          <section class="article-section">
+            <p class="section-index">03</p>
+            <h2>11월까지의 계획과 다음 질문</h2>
+            <p>숙련자에게 남길 질문은 데이터 계약이다. frame, 거리·속도 단위, sensor timestamp, 최대 속도·정지거리·timeout을 고정해야 같은 상황을 다시 평가할 수 있다. 성공률뿐 아니라 near-miss와 재계획 시간도 봐야 하지 않을까?</p>
+            <p><strong>11월까지의 계획:</strong> 시뮬레이션에서 세 조건을 같은 표로 반복하고, 안전한 실습에서 한 변수씩 바꾸며 기록을 늘리겠다. 수업과 DAPIER는 진행 중인 스냅샷이다.</p>
+          </section>
+          <section class="sources" id="sources">
+            <p class="section-index">SOURCES</p>
+            <h2>연결한 Shorts와 기록 경계</h2>
+            <ul>
+              <li><a href="https://youtube.com/shorts/g5ZdFZYf9KA" target="_blank" rel="noreferrer">전체 길을 찾는 글로벌 경로 계획</a> <small>2026.08.20</small></li>
+              <li><a href="https://youtube.com/shorts/jKmdvshgsNY" target="_blank" rel="noreferrer">눈앞 장애물을 피하는 로컬 경로 계획</a> <small>2026.08.21</small></li>
+              <li><a href="https://youtube.com/shorts/aFg_9s4fm8E" target="_blank" rel="noreferrer">장애물 회피는 멈추기부터 시작할 수 있다</a> <small>2026.08.24</small></li>
+            </ul>
+            <p class="source-boundary">교육은 2026년 11월까지 진행 중이다. 개인 정보는 넣지 않았다. DAPIER는 내가 배운 내용을 정리해 가는 개인 학습 레포이며, 공개 TurtleBot3 경로와 확인된 Nav2 결과만 근거로 삼았다. 로컬 costmap과 실물 정지거리는 미확인이다.</p>
+          </section>
+        </article>
+        <aside class="side-rail" aria-label="학습 기록 정보">
+          <div class="rail-block"><p class="rail-label">CURRENT TRACK</p><h3>로컬 계획·장애물 회피 → 11월까지</h3><p>큰 경로를 기준으로 눈앞을 다시 보고, 안전하지 않으면 멈추는 조건을 확인하는 중이다.</p></div>
+          <div class="rail-block"><p class="rail-label">LATEST DEEP DIVES</p>
+            <!-- BLOG_INDEX_START -->
+            <a class="rail-link" href="#page-title"><span>007</span> 눈앞 장애물 앞에서 멈출 때</a>
+            <a class="rail-link" href="2026-08-20-global-path-trajectory-safety-check.html"><span>006</span> 길을 안전한 궤적으로</a>
+            <a class="rail-link" href="2026-08-18-feedback-pid-tuning-check.html"><span>005</span> 움직인 뒤 다시 보는 이유</a>
+            <a class="rail-link" href="2026-08-13-ros2-communication-contract.html"><span>004</span> 어떤 통신을 고를까</a>
+            <a class="rail-link" href="2026-08-11-pose-tracking-slam-state.html"><span>003</span> 시간과 지도 속 상태</a>
+            <!-- BLOG_INDEX_END -->
+          </div>
+          <div class="rail-block rail-note"><p class="rail-label">WRITING RULE</p><p>계획 성공과 실제 주행 성공, 그리고 안전 정지를 한 결과처럼 섞지 않는다.</p></div>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Physical AI Lab · learning in public, one verified step at a time.</span><a href="#top">맨 위로 ↑</a></footer>
+  </body>
+</html>
+
