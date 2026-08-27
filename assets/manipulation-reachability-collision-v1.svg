@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Reachability, approach, and collision planning diagram</title>
+  <desc id="desc">A robot arm reaches a target through a safe curved approach while a blocked route is marked away from an obstacle.</desc>
+  <rect width="1200" height="760" fill="#f4f0e8"/>
+  <path d="M120 610 C260 340 505 190 810 210" fill="none" stroke="#c9c1b3" stroke-width="4" stroke-dasharray="12 14"/>
+  <path d="M120 610 C365 505 470 330 735 300" fill="none" stroke="#a83f2c" stroke-width="12" opacity=".22"/>
+  <path d="M120 610 C330 650 495 570 650 420 C710 362 755 302 820 260" fill="none" stroke="#176b63" stroke-width="12" stroke-linecap="round"/>
+  <path d="M120 610 C330 650 495 570 650 420 C710 362 755 302 820 260" fill="none" stroke="#f4f0e8" stroke-width="3" stroke-dasharray="3 16" stroke-linecap="round"/>
+  <rect x="510" y="335" width="170" height="130" rx="12" fill="#373b43"/>
+  <rect x="535" y="360" width="120" height="80" rx="8" fill="#5f6670"/>
+  <circle cx="120" cy="610" r="42" fill="#25323a"/>
+  <circle cx="120" cy="610" r="15" fill="#e3b35a"/>
+  <path d="M120 610 L315 530 L470 580 L640 420" fill="none" stroke="#25323a" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="315" cy="530" r="24" fill="#e3b35a" stroke="#25323a" stroke-width="10"/>
+  <circle cx="470" cy="580" r="24" fill="#e3b35a" stroke="#25323a" stroke-width="10"/>
+  <circle cx="640" cy="420" r="24" fill="#e3b35a" stroke="#25323a" stroke-width="10"/>
+  <path d="M640 420 l50 -22 M640 420 l32 42" stroke="#25323a" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="820" cy="260" r="34" fill="#d08a42" stroke="#7f4b2b" stroke-width="8"/>
+  <path d="M790 248 l-48 -26 M790 274 l-48 26" stroke="#7f4b2b" stroke-width="12" stroke-linecap="round"/>
+  <path d="M785 240 L815 280 M785 280 L815 240" stroke="#f4f0e8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M830 260 l58 -20 M830 260 l58 20" stroke="#176b63" stroke-width="8" stroke-linecap="round"/>
+  <path d="M880 238 l-16 -2 8 14 M880 282 l-16 2 8 -14" fill="#176b63"/>
+  <path d="M735 300 l24 -22 M735 300 l2 30" stroke="#a83f2c" stroke-width="9" stroke-linecap="round"/>
+  <path d="M758 278 l-17 3 9 12 M737 330 l2 -17 12 8" fill="#a83f2c"/>
+  <path d="M90 675 H960" stroke="#d8d0c3" stroke-width="3"/>
+  <circle cx="820" cy="260" r="64" fill="none" stroke="#176b63" stroke-width="3" stroke-dasharray="8 12" opacity=".7"/>
+</svg>
+
