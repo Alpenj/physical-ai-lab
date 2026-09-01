@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="관측·행동·시간·좌표를 한 번의 episode 계약으로 묶어 로봇 경험을 다시 학습과 평가에 쓰는 현재 학습 기록.">
+    <title>Physical AI Lab | 009 로봇의 한 번의 시도를 학습 데이터로 믿으려면 무엇을 남겨야 할까</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Physical AI Lab home"><span class="brand-mark">PA</span><span>Physical AI Lab</span></a>
+      <nav class="site-nav" aria-label="주요 메뉴"><a href="../index.html#posts">학습 기록</a><a href="#journal">현재 이해</a><a href="#sources">출처</a></nav>
+    </header>
+    <main id="top">
+      <section class="hero-band" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">LEARNING LOG · 009 / COURSE IN PROGRESS · 2026.09.01</p>
+          <h1 id="page-title">로봇의 한 번의 시도를<br>학습 데이터로 믿으려면<br>무엇을 남겨야 할까</h1>
+          <p class="hero-summary">관측과 행동을 같은 시간축·좌표계에 놓고, 종료 상태와 품질 검사를 함께 남겨야 한 번의 경험을 다시 읽을 수 있다.</p>
+          <div class="hero-meta" aria-label="글 정보"><span>교육 진행 중</span><span>현재: 로봇 학습·데이터 계약</span><span>다음: 합성 episode 검증</span></div>
+        </div>
+        <figure class="hero-figure">
+          <img src="../assets/robot-episode-data-contract-v1.svg" alt="관측 스트림, 행동 스트림, 시간축과 좌표 정렬이 하나의 검증된 로봇 episode로 합쳐지는 도식">
+          <figcaption>관측·행동·시간·좌표가 맞아야 한 번의 시도가 학습 가능한 기록이 된다.</figcaption>
+        </figure>
+      </section>
+      <section class="article-shell" id="journal">
+        <article class="article">
+          <p class="article-lede">로봇이 한 번 움직였다는 사실만 저장하면 그 경험을 학습에 다시 쓸 수 있을까? 세 Shorts는 데이터 항목, 기록, TF·RViz 상태 확인을 이어 준다. 내 질문은 “관측과 행동을 어떤 계약으로 묶어야 한 번의 시도를 믿을 수 있을까?”다.</p>
+          <div class="reading-time"><span>읽는 시간 5분</span><span>관측 → 기록 → 정렬·검사</span></div>
+          <section class="article-section">
+            <p class="section-index">01</p>
+            <h2>세 Shorts가 이어 준 한 번의 시도</h2>
+            <p>8월 28일 영상은 관측·행동·결과를 함께 담아야 한다고 묻는다. 8월 15일 rosbag 영상은 이를 재생 가능한 기록으로 바꾸고, TF·RViz 영상은 관절과 센서의 좌표를 맞춰 본다. 항목을 정하고 → 시간순으로 저장하고 → 좌표와 품질을 확인하는 순서다.</p>
+          </section>
+          <section class="article-section" id="system">
+            <p class="section-index">02</p>
+            <h2>내가 지금 이해한 것과 아직 모르는 것</h2>
+            <p>현재는 7단계 ‘로봇에게 행동을 학습시키기’의 초입이다. <strong>Observation</strong>은 정책이 보는 영상·관절 상태, <strong>Action</strong>은 로봇에 보내는 명령, <strong>Episode</strong>는 초기화부터 성공·실패·중단까지 한 번의 시도다. 시각이 어긋나면 모델은 다른 순간의 명령을 정답으로 배운다.</p>
+            <p>공개 기록에서 2ARM_ROBOT의 20Hz 합성 RGB-D topic, approximate-time recorder, timestamp gap·drop·shape·joint jump 검사와 accepted episode 질의를 확인했다. 이는 hardware-free 계약이며 실제 카메라 stream, action 단위·joint order, 실물 성공률은 미확인이다.</p>
+            <p><strong>다음 수업 전 확인:</strong> 합성 episode 하나의 `episode_id`, `t`, observation, action, outcome, frame, unit을 대조하겠다.</p>
+          </section>
+          <section class="article-section">
+            <p class="section-index">03</p>
+            <h2>11월까지의 계획과 숙련자용 질문</h2>
+            <p><strong>11월까지의 계획:</strong> 합성 recorder와 품질 gate를 반복한 뒤 train/validation에서 누락·시간 skew·좌표 불일치를 재현하고, calibration과 저속 실습에서 실제 timestamp와 action 범위를 확인한다. 수업과 DAPIER는 진행 중이며 기록도 계속 자란다.</p>
+            <p>숙련자 질문은 데이터 계약이다. `state_t → action_t`와 `state_t → action_{t+1}` 중 무엇을 고정할지, timestamp 허용 오차·단위·frame·safety stop 분리를 어디서 검사할지 정해야 한다. 성공률 외에 누락률·지연·limit violation도 평가해야 한다.</p>
+          </section>
+          <section class="sources" id="sources">
+            <p class="section-index">SOURCES</p>
+            <h2>연결한 Shorts와 기록 경계</h2>
+            <ul>
+              <li><a href="https://youtube.com/shorts/dGdGgtfb9EI" target="_blank" rel="noreferrer">로봇 학습에서 데이터는 무엇을 담아야 할까</a> <small>2026.08.28</small></li>
+              <li><a href="https://youtube.com/shorts/4hZ3KOPEFrE" target="_blank" rel="noreferrer">로봇 데이터는 왜 녹화해 두어야 할까</a> <small>2026.08.15</small></li>
+              <li><a href="https://youtube.com/shorts/7IY696zYqm4" target="_blank" rel="noreferrer">TF와 RViz로 로봇 상태를 눈으로 확인하기</a> <small>2026.08.15</small></li>
+            </ul>
+            <p class="source-boundary">교육은 2026년 11월까지 진행 중이다. DAPIER는 내가 배운 내용을 정리해 가는 개인 학습 레포이며, 공개된 2ARM_ROBOT README의 합성 episode 계약과 품질 검사 범위만 근거로 삼았다. 비공개 메모·URL·개인 경로는 넣지 않았고, 실물 센서·실제 episode·정책 성능은 미확인이다.</p>
+          </section>
+        </article>
+        <aside class="side-rail" aria-label="학습 기록 정보">
+          <div class="rail-block"><p class="rail-label">CURRENT TRACK</p><h3>로봇 학습·데이터 → 11월까지</h3><p>관측·행동·시간·좌표를 한 episode 계약으로 묶는 중이다.</p></div>
+          <div class="rail-block rail-note"><p class="rail-label">LATEST DEEP DIVES</p>
+            <a class="rail-link" href="#page-title"><span>009</span> 한 번의 시도를 데이터로</a>
+            <a class="rail-link" href="2026-08-27-manipulation-reachability-collision.html"><span>008</span> 닿는 곳을 집는 경로</a>
+            <a class="rail-link" href="2026-08-25-local-planning-stop-safety.html"><span>007</span> 눈앞 장애물 앞에서 멈출 때</a>
+            <a class="rail-link" href="2026-08-20-global-path-trajectory-safety-check.html"><span>006</span> 길을 안전한 궤적으로</a>
+            <a class="rail-link" href="2026-08-18-feedback-pid-tuning-check.html"><span>005</span> 움직인 뒤 다시 보는 이유</a>
+          </div>
+          <div class="rail-block rail-note"><p class="rail-label">WRITING RULE</p><p>합성 계약과 실물 검증을 같은 결과처럼 섞지 않는다.</p></div>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Physical AI Lab · learning in public, one verified step at a time.</span><a href="#top">맨 위로 ↑</a></footer>
+  </body>
+</html>
+
