@@ -27,7 +27,7 @@
       </section>
       <section class="article-shell" id="journal">
         <article class="article">
-          <p class="article-lede">길을 찾았는데도 로봇은 왜 바로 가지 못할까? 세 Shorts는 큰 경로, 눈앞 재계획, 정지 우선의 순서를 보여 줬다. 경로는 센서가 새 상황을 읽을 때마다 다시 묻는 약속이다.</p>
+          <p class="article-lede">길을 찾았는데도 로봇은 왜 바로 가지 못할까? 큰 경로는 기준일 뿐이고, 센서가 새 상황을 읽을 때마다 로컬 재계획과 정지 허가를 다시 받아야 한다. 이번 기록은 그 판단 경계를 분리하는 데 초점을 둔다.</p>
           <div class="reading-time"><span>읽는 시간 5분</span><span>큰 경로 → 로컬 우회 → 안전 정지</span></div>
           <section class="article-section">
             <p class="section-index">01</p>
@@ -37,13 +37,13 @@
           <section class="article-section" id="system">
             <p class="section-index">02</p>
             <h2>오늘 이해한 것과 아직 확인하지 못한 것</h2>
-            <p>현재는 6단계 ‘계획하고 정확히 움직이기’에서 로컬 계획과 장애물 회피를 다시 보는 중이다. 로컬 플래너는 센서가 갱신한 costmap을 보고 지금 따라갈 후보를 고르는 층이다. 공개 학습 기록에서 Jazzy·gz-sim Nav2 목표 전송과 <code>SUCCEEDED</code>는 확인했지만, 모든 장애물 배치의 안전을 뜻하지는 않는다. 우회와 정지의 경계, timestamp 지연, 실제 정지거리는 아직 미확인이다.</p>
+            <p>현재 6단계에서 로컬 계획과 장애물 회피를 다시 보는 중이다. 로컬 플래너는 갱신된 costmap에서 짧은 실행 후보를 고르고, 안전 여유가 없으면 정지 쪽으로 판단을 넘긴다. 공개 기록의 Jazzy·gz-sim Nav2 <code>SUCCEEDED</code>는 특정 목표 전송의 증거일 뿐이며, 장애물 배치·timestamp 지연·실제 정지거리는 미확인이다.</p>
             <p>다음 수업 전에는 목표와 속도 제한을 고정하고 장애물을 한 개씩 가까이 옮겨 선택·거부·정지 결과를 따로 기록하겠다.</p>
           </section>
           <section class="article-section">
             <p class="section-index">03</p>
             <h2>11월까지의 계획과 다음 질문</h2>
-            <p>숙련자에게 남길 질문은 데이터 계약이다. frame, 거리·속도 단위, sensor timestamp, 최대 속도·정지거리·timeout을 고정해야 같은 상황을 다시 평가할 수 있다. 성공률뿐 아니라 near-miss와 재계획 시간도 봐야 하지 않을까?</p>
+            <p>숙련자에게 남길 질문은 정지 허가 계약이다. frame, 거리·속도 단위, sensor timestamp, 최대 속도·정지거리·timeout을 고정하고, 성공률 외에 near-miss와 재계획 시간을 함께 평가해야 한다.</p>
             <p><strong>11월까지의 계획:</strong> 시뮬레이션에서 세 조건을 같은 표로 반복하고, 안전한 실습에서 한 변수씩 바꾸며 기록을 늘리겠다. 수업과 DAPIER는 진행 중인 스냅샷이다.</p>
           </section>
           <section class="sources" id="sources">
