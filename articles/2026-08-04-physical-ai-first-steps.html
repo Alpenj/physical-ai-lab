@@ -43,7 +43,7 @@
       <section class="article-shell" id="journal">
         <article class="article">
           <p class="article-lede">
-            이 글은 끝낸 프로젝트의 회고가 아니다. 지금도 국비 Physical AI 교육을 듣고 있고, 11월까지 수업과 실습을 이어가며 <a href="https://github.com/Alpenj/DAPIER" target="_blank" rel="noreferrer">DAPIER</a>에 기록을 추가할 예정이다. 지금 공개하는 내용은 최종 결과가 아니라 오늘까지 확인한 범위의 스냅샷이다. 내가 당장 하려는 일은 Physical AI 전체를 다 아는 것이 아니라, 이번 수업에서 배운 개념 하나를 코드나 장치 상태와 연결해 직접 확인하는 것이다.
+            로봇 프로젝트를 시작할 때 가장 먼저 정해야 할 것은 모델 이름이 아니라 무엇을 입력으로 받고 무엇을 확인할지다. 지금도 국비 Physical AI 교육을 듣고 있으며, 이 글은 끝난 프로젝트의 회고가 아니라 11월까지 이어질 검증 기록의 첫 기준점이다. 수업에서 배운 개념을 코드·장치 상태·실패 조건 중 하나와 연결해 확인하는 것이 현재 목표다.
           </p>
 
           <div class="reading-time">
@@ -55,10 +55,10 @@
             <p class="section-index">01</p>
             <h2>교육 중인 지금, Physical AI를 이렇게 연결하고 있다</h2>
             <p>
-              첫 수업에서는 Physical AI의 방향과 프로젝트 범위를 잡았다. 그 뒤로 Python 자료구조와 반복문, 파일과 함수, Pygame, 클래스와 모듈, NumPy와 시각화, 스레딩과 Queue를 지나 Arduino Serial·PWM과 C++ 기초를 배웠다. 최근 수업에서는 Ubuntu와 ROS 2의 node·topic, Vision과 teleop, URDF·RViz, ROS 기반 AGV 통신, 이미테이션 러닝까지 연결해서 보고 있다.
+              첫 수업에서 프로젝트 범위를 정한 뒤 Python·Queue·Serial·PWM을 거쳐 Ubuntu·ROS 2·URDF·RViz·이미테이션 러닝으로 확장했다. 중요한 것은 항목을 많이 배웠다는 사실이 아니라, 각각이 센서 입력·행동 명령·결과 확인이라는 같은 흐름에 다시 쓰인다는 점이다.
             </p>
             <p>
-              이 순서는 이미 끝낸 커리큘럼을 자랑하려는 목록이 아니다. 수업에서 앞에서 배운 Python과 통신 개념이 뒤의 로봇 실습에서 다시 등장하는 것을 확인하는 과정이다. 아직 전체 교육이 끝난 것도 아니고, 카메라 데이터와 정책을 실제 장치에서 안정적으로 평가하는 단계도 남아 있다. 그래서 지금은 모델 이름보다 <strong>상태를 읽고, 행동을 만들고, 결과를 다시 확인하는 흐름</strong>을 놓치지 않으려 한다.
+              그래서 지금은 <strong>상태를 읽고 → 행동을 만들고 → 결과를 다시 읽는 흐름</strong>을 먼저 고정한다. 카메라 데이터와 정책을 실제 장치에서 안정적으로 평가하는 일은 아직 남아 있다.
             </p>
           </section>
 
@@ -70,7 +70,7 @@
             <p class="section-index">02</p>
             <h2>DAPIER는 수업과 실습을 쌓아 두는 내 기록장이다</h2>
             <p>
-              DAPIER는 내가 교육을 들으며 수업 내용과 실습 과정을 정리해 가는 개인 레포다. 이 레포를 새로 공부하는 것이 아니라, 내가 배운 내용을 다시 설명하고 다음 실습을 준비하기 위해 현재 기록을 꺼내 보는 것이다. 공개 README에 남겨 둔 ROS 2 로봇암 구조에서는 <code>JointState</code> 메시지가 브리지와 Arduino Uno를 거쳐 서보의 PWM 명령으로 이어진다.
+              DAPIER는 내가 교육 중 배운 내용과 실습 과정을 정리해 가는 개인 학습 레포다. 공개 README에서 확인한 한 경로는 ROS 2 <code>JointState</code>가 브리지를 지나 Arduino Uno의 서보 PWM으로 이어지는 구조다. 이 구조를 읽으며 “메시지가 도착했다”와 “관절이 그 명령대로 움직였다”를 분리해 기록해야 한다는 기준을 세웠다.
             </p>
             <div class="flow-diagram" aria-label="DAPIER 로봇암의 데이터 흐름">
               <div class="flow-node"><span>01</span><strong>JointState</strong><small>ROS 2 / radian</small></div>
@@ -82,7 +82,7 @@
               <div class="flow-node"><span>04</span><strong>Servo</strong><small>physical motion</small></div>
             </div>
             <p>
-              예를 들어 ROS 2와 URDF 쪽 관절 위치는 라디안으로 다루고, 서보 명령은 도 단위로 보낸다. README에 적어 둔 현재 실습 기준은 <code>servo_degree = 90 + degrees(urdf_radian)</code>처럼 중심값과 단위를 먼저 확인하는 것이다. 이런 경계가 맞아야 화면의 로봇과 실제 로봇을 같은 문제로 이야기할 수 있다. 앞으로 카메라, 데이터셋, 정책 실습을 진행하면 그 결과도 직접 확인한 범위부터 DAPIER에 이어서 남길 예정이다.
+              README에 적힌 변환 예시는 <code>servo_degree = 90 + degrees(urdf_radian)</code>다. 나는 이 식을 실물 성공의 증거로 쓰지 않고, 라디안·도 단위와 중심값을 명시해야 한다는 인터페이스 기준으로만 사용한다. 카메라·데이터셋·정책은 실제로 확인한 뒤 추가할 예정이다.
             </p>
             <pre class="code-block"><code>servo_degree = 90 + degrees(urdf_radian)</code></pre>
             <p class="code-caption">현재 기록에서 확인한 단위 변환. 다음 실습에서도 같은 기준을 다시 점검한다.</p>
@@ -92,7 +92,7 @@
             <p class="section-index">03</p>
             <h2>수업을 따라가며 계속 지키는 작은 기준</h2>
             <p>
-              지금 내 학습 방식은 AI가 알려 준 내용을 그대로 완료 처리하는 것이 아니다. 용어나 오류 원인의 후보를 찾는 데 도움을 받을 수는 있지만, 코드 실행·배선·장치 동작·결과 판단은 직접 확인한 경우만 기록한다. 한 번에 큰 시스템을 완성했다고 쓰지 않고 <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 범위를 나눠 보는 이유도 여기에 있다.
+              지금 내 학습 방식은 AI가 제안한 설명을 완료 처리하는 것이 아니다. 코드 실행·배선·장치 동작·결과 판단을 직접 확인한 범위만 증거로 남기고, <code>최소 성공 → 확장 성공 → 도전 성공</code>으로 범위를 나눈다.
             </p>
             <div class="decision-grid">
               <div class="decision-row"><span class="decision-tag keep">지금 기록</span><p>ROS 2 메시지와 node·topic, URDF·TF·RViz, 관절 순서와 단위를 수업 실습과 연결한다.</p></div>
@@ -187,3 +187,4 @@
     </footer>
   </body>
 </html>
+
