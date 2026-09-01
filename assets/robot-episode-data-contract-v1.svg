@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">관측과 행동을 시간과 좌표로 묶는 로봇 episode 도식</title>
+  <desc id="desc">세 개의 데이터 흐름이 시간축과 좌표축을 통과해 하나의 검증된 episode로 합쳐지는 추상 도식</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1d2940"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6c85f"/><stop offset="1" stop-color="#f29e4c"/></linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#78e3e0"/><stop offset="1" stop-color="#4fb3d9"/></linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9c8b"/><stop offset="1" stop-color="#e66c8b"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f6c85f"/></marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#78e3e0"/></marker>
+    <marker id="arrowCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ff9c8b"/></marker>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="url(#bg)"/>
+  <path d="M70 602 C250 526 337 610 472 526 S742 520 882 598" fill="none" stroke="#31415e" stroke-width="2"/>
+  <g opacity=".32" stroke="#526584" stroke-width="2" fill="none">
+    <path d="M90 126H1110"/><path d="M90 220H1110"/><path d="M90 314H1110"/><path d="M90 408H1110"/><path d="M90 502H1110"/>
+  </g>
+  <!-- observation stream -->
+  <g transform="translate(92 112)">
+    <rect x="0" y="0" width="178" height="116" rx="22" fill="#20334c" stroke="#78e3e0" stroke-width="3"/>
+    <rect x="26" y="24" width="126" height="68" rx="10" fill="none" stroke="#78e3e0" stroke-width="4"/>
+    <circle cx="58" cy="58" r="11" fill="#78e3e0"/><path d="M78 78l18-20 18 14 14-16 20 22" fill="none" stroke="#78e3e0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M270 170 C380 170 370 258 492 258" fill="none" stroke="url(#cyan)" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowCyan)"/>
+  <!-- action stream -->
+  <g transform="translate(92 304)">
+    <rect x="0" y="0" width="178" height="116" rx="22" fill="#3a2d35" stroke="#ff9c8b" stroke-width="3"/>
+    <circle cx="54" cy="58" r="18" fill="none" stroke="#ff9c8b" stroke-width="5"/><circle cx="54" cy="58" r="6" fill="#ff9c8b"/>
+    <path d="M86 78l28-48 28 48M100 58h28" fill="none" stroke="#ff9c8b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M270 362 C380 362 370 300 492 300" fill="none" stroke="url(#coral)" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowCoral)"/>
+  <!-- time axis -->
+  <g transform="translate(88 524)">
+    <path d="M0 0H420" stroke="#f6c85f" stroke-width="6" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+    <g stroke="#f6c85f" stroke-width="5">
+      <path d="M56 -16V16"/><path d="M132 -16V16"/><path d="M208 -16V16"/><path d="M284 -16V16"/><path d="M360 -16V16"/>
+    </g>
+    <circle cx="56" cy="0" r="12" fill="#f6c85f"/><circle cx="132" cy="0" r="12" fill="#f6c85f"/><circle cx="208" cy="0" r="12" fill="#f6c85f"/><circle cx="284" cy="0" r="12" fill="#f6c85f"/><circle cx="360" cy="0" r="12" fill="#f6c85f"/>
+  </g>
+  <path d="M508 258 C566 258 574 360 638 360" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+  <path d="M508 300 C566 300 574 392 638 392" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+  <path d="M508 524 C566 524 574 432 638 432" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+  <!-- coordinate frame / alignment -->
+  <g transform="translate(550 164)">
+    <circle cx="86" cy="118" r="76" fill="#17283c" stroke="#78e3e0" stroke-width="3"/>
+    <path d="M86 118V48M86 118h70M86 118l-48 50" stroke="#78e3e0" stroke-width="6" stroke-linecap="round" marker-end="url(#arrowCyan)"/>
+    <circle cx="86" cy="118" r="9" fill="#f6c85f" filter="url(#glow)"/>
+    <path d="M30 238 C60 212 112 212 142 238" fill="none" stroke="#f6c85f" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="30" cy="238" r="9" fill="#f6c85f"/><circle cx="86" cy="224" r="9" fill="#f6c85f"/><circle cx="142" cy="238" r="9" fill="#f6c85f"/>
+  </g>
+  <!-- accepted episode convergence -->
+  <g transform="translate(820 180)">
+    <path d="M40 0H210L252 42V268L210 310H40L0 268V42z" fill="#20334c" stroke="#f6c85f" stroke-width="4"/>
+    <path d="M210 0V42H252" fill="none" stroke="#f6c85f" stroke-width="4"/>
+    <path d="M54 92H198M54 142H198M54 192H170" stroke="#f6c85f" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+    <circle cx="62" cy="246" r="14" fill="#78e3e0"/><circle cx="104" cy="246" r="14" fill="#ff9c8b"/><circle cx="146" cy="246" r="14" fill="#f6c85f"/><path d="M178 246h28" stroke="#f6c85f" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <path d="M720 344 C780 344 770 334 820 334" fill="none" stroke="#f6c85f" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+  <path d="M720 420 C780 420 770 438 820 438" fill="none" stroke="#f6c85f" stroke-width="8" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+  <!-- small checkpoint ring -->
+  <g transform="translate(1038 568)"><circle r="62" fill="#17283c" stroke="#78e3e0" stroke-width="4"/><path d="M-26 0l18 18 38-42" fill="none" stroke="#78e3e0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <path d="M1020 500 C1018 468 1000 450 970 430" fill="none" stroke="#78e3e0" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowCyan)"/>
+</svg>
+
