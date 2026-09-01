@@ -27,24 +27,24 @@
       </section>
       <section class="article-shell" id="journal">
         <article class="article">
-          <p class="article-lede">로봇 팔이 물체에 닿을 수 있다면 바로 집어도 될까? 세 Shorts는 집기 전 계획, 팔이 실제로 닿는 작업공간, 움직이기 전 충돌 검사를 한 질문으로 묶었다. 내 질문은 “닿는 목표를 안전한 접근 경로로 어떻게 바꿀까?”다.</p>
+          <p class="article-lede">로봇 팔이 물체에 닿을 수 있다면 바로 집어도 될까? 도달 가능성은 후보를 남기는 조건일 뿐이고, 접근 자세와 충돌 검사가 실행 허가를 결정한다. 내 질문은 “닿는 목표를 안전한 접근 경로로 어떻게 바꿀까?”다.</p>
           <div class="reading-time"><span>읽는 시간 5분</span><span>작업공간 → 접근 → 충돌 검사</span></div>
           <section class="article-section">
             <p class="section-index">01</p>
             <h2>세 Shorts가 이어 준 집기 순서</h2>
-            <p>8월 25일 영상은 물체를 집기 전에 접근 방향과 그리퍼 자세를 계획해야 한다고 말한다. 8월 7일 워크스페이스 영상은 관절이 만들 수 있는 도달 범위 안에 목표가 있는지 먼저 묻는다. 같은 날 충돌 영상은 목표가 범위 안이어도 팔·테이블·물체와 부딪히는 경로라면 버려야 한다고 보여 준다. 계획 → 도달 가능성 → 충돌 검사는 후보를 점점 줄이는 흐름이다.</p>
+            <p>8월 25일 영상은 접근 방향과 그리퍼 자세를 먼저 정하게 하고, 8월 7일 워크스페이스 영상은 관절 제한 안에 목표가 있는지 묻는다. 같은 날 충돌 영상은 범위 안의 목표도 팔·테이블·물체와 부딪히면 버리게 한다. 계획 → 도달 가능성 → 충돌 검사는 후보를 단계적으로 줄이는 필터다.</p>
           </section>
           <section class="article-section" id="system">
             <p class="section-index">02</p>
             <h2>오늘 이해한 것과 아직 확인하지 못한 것</h2>
-            <p>현재는 6단계 ‘계획하고 정확히 움직이기’에서 조작 계획으로 넘어가는 중이다. 작업공간은 관절 제한 안에서 손끝이 닿을 수 있는 영역이고, grasp는 물체를 어떤 자세로 잡을지 정한 선택이다. 공개 학습 기록에서는 SO-101 MuJoCo RGB pick-and-place를 30개 seed에서 통과한 결과를 확인했지만 시뮬레이션 장면과 정해진 물체 범위의 기록이다. 실제 카메라 보정, 마찰, 다른 물체의 모양, 실물 충돌 여유는 아직 확인하지 못했다.</p>
+            <p>현재는 6단계에서 조작 계획으로 넘어가는 중이다. 공개 SO-101 기록의 MuJoCo RGB pick-and-place는 <code>30/30</code> seed 통과였지만 정해진 장면·물체 범위의 simulation evidence다. 실제 카메라 보정·마찰·다른 물체·실물 충돌 여유는 아직 확인하지 않았다.</p>
             <p>다음 수업 전에는 같은 목표에 위·옆 접근 후보를 각각 만들고, 관절 한계·자기 충돌·장애물 여유를 따로 표시해 보겠다. <strong>아직 실행으로 확인하지 못한 것:</strong> 접근 후보가 바뀌어도 grasp 성공이 유지되는지다.</p>
           </section>
           <section class="article-section">
             <p class="section-index">03</p>
             <h2>11월까지의 계획과 다음 질문</h2>
             <p>숙련자에게 남길 질문은 데이터 계약이다. 관절 action의 단위와 순서, 목표 pose의 frame, 센서 timestamp, 최대 속도와 충돌 정지 한계를 하나의 기록에 고정해야 후보 경로를 공정하게 비교할 수 있다. 충돌 판정이 경로 샘플 간 빈틈을 놓치지 않는지도 평가해야 한다.</p>
-            <p><strong>11월까지의 계획:</strong> 시뮬레이션에서 작업공간·접근·충돌 검사를 작은 단계로 반복하고, 이후 calibration과 저속 실습으로 경계를 확인하겠다. 수업과 DAPIER는 계속 쌓이는 진행 기록이다.</p>
+            <p><strong>11월까지의 계획:</strong> 시뮬레이션에서 작업공간·접근·충돌 검사를 작은 단계로 반복하고, calibration과 저속 실습에서 경계를 확인한다. 수업과 DAPIER는 계속 쌓이는 진행 기록이다.</p>
           </section>
           <section class="sources" id="sources">
             <p class="section-index">SOURCES</p>
