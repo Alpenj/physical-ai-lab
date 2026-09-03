@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">가상 성공을 조건과 범위로 다시 확인하는 세 단계</title>
+  <desc id="desc">가상 장면의 경로가 물리 조건을 거쳐 여러 현실적인 변형과 안전 경계로 이어지는 도식</desc>
+  <rect width="960" height="620" rx="28" fill="#102536"/>
+  <path d="M80 470H880" stroke="#355467" stroke-width="2"/>
+  <path d="M80 150H880" stroke="#203d50" stroke-width="2" stroke-dasharray="8 12"/>
+  <g transform="translate(72 92)">
+    <rect width="240" height="360" rx="18" fill="#173b4d" stroke="#5ea9b1" stroke-width="2"/>
+    <path d="M35 300C70 250 72 182 112 132s91-31 104-91" fill="none" stroke="#c5f0e8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M35 300C70 250 72 182 112 132s91-31 104-91" fill="none" stroke="#63b9b2" stroke-width="24" stroke-linecap="round" opacity=".18"/>
+    <circle cx="36" cy="300" r="16" fill="#f4b860"/>
+    <circle cx="216" cy="41" r="18" fill="#f4b860"/>
+    <path d="M42 332h160" stroke="#88cbd0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M67 332v-22m50 22v-22m50 22v-22" stroke="#88cbd0" stroke-width="4"/>
+  </g>
+  <g transform="translate(360 92)">
+    <rect width="240" height="360" rx="18" fill="#3b2f2d" stroke="#e49b5a" stroke-width="2"/>
+    <circle cx="120" cy="152" r="72" fill="#e49b5a" opacity=".2"/>
+    <path d="M55 234h130" stroke="#f2c078" stroke-width="16" stroke-linecap="round"/>
+    <path d="M72 234c4-54 28-91 48-91s44 37 48 91" fill="none" stroke="#f8dfb0" stroke-width="7"/>
+    <path d="M44 290h152" stroke="#e49b5a" stroke-width="7" stroke-linecap="round"/>
+    <path d="M78 290v-33m42 33v-33m42 33v-33" stroke="#e49b5a" stroke-width="5"/>
+    <path d="M76 107l-26 26m134-26 26 26" stroke="#f2c078" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="120" cy="152" r="13" fill="#f8dfb0"/>
+  </g>
+  <g transform="translate(648 92)">
+    <rect width="240" height="360" rx="18" fill="#203c3e" stroke="#9dcc83" stroke-width="2"/>
+    <path d="M35 300C68 261 83 210 107 170s57-55 97-71" fill="none" stroke="#a9d68b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M35 300C90 315 137 294 163 257s46-82 41-158" fill="none" stroke="#e7ba72" stroke-width="8" stroke-linecap="round"/>
+    <path d="M35 300C62 244 90 212 133 204s68 9 90 49" fill="none" stroke="#d88978" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="35" cy="300" r="14" fill="#f4b860"/>
+    <rect x="171" y="276" width="40" height="40" rx="8" fill="#d88978" opacity=".9"/>
+    <path d="M48 338h164" stroke="#9dcc83" stroke-width="6" stroke-linecap="round"/>
+    <path d="M75 338v-20m52 20v-20m52 20v-20" stroke="#9dcc83" stroke-width="4"/>
+  </g>
+  <path d="M326 270h28m-10-10 10 10-10 10M614 270h28m-10-10 10 10-10 10" fill="none" stroke="#9bc7c5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 500h800" stroke="#f4b860" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+  <path d="M80 500h210m90 0h210m90 0h210" stroke="#f4b860" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+</svg>
+
