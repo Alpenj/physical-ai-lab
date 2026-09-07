@@ -11,12 +11,21 @@
 | 확인하려는 내용 | 시작 위치 |
 |---|---|
 | 경력과 프로젝트 전체 맥락 | [Physical AI Portfolio](https://julianjeonresume.netlify.app/) |
+| 이동과 양팔 조작을 결합하는 팀 프로젝트 | [Visual SLAM 기반 이동형 양팔 로봇](projects/mobile-dual-arm/README.md) — 개인 담당 범위·팀원 SLAM 코드·통합 목표를 구분 |
 | 데이터와 검증을 바라보는 방식 | [Episode 데이터 계약](articles/2026-09-01-robot-episode-data-contract.html), [시뮬레이션 가정과 검증 범위](articles/2026-09-03-simulation-assumption-range-check.html) |
 | 로봇 시스템의 기본 개념 | [로봇 모델·FK·IK](articles/2026-08-06-robot-model-fk-ik-check.html), [ROS 2 통신 계약](articles/2026-08-13-ros2-communication-contract.html) |
 | 공개 개발 코드 | [soccerhelper](https://github.com/Alpenj/soccerhelper) — 웹·모바일 팀 운영 MVP |
 | 교육용 원본을 따라 읽는 코드 | [SO-101 학습 포크](https://github.com/Alpenj/so101_imitation_learning), [deepThinkCar 학습 저장소](https://github.com/Alpenj/deepThinkCar_mini) |
 
 **저장소의 역할:** DAPIER는 내 수업·개인 실습 코드를 정리하는 작업 저장소이며, 이 저장소는 읽기 쉬운 공개 학습 글을 관리합니다. DAPIER는 2026-09-05 확인 기준 비공개이므로, 해당 링크만으로 외부 검토자가 코드를 볼 수 있다고 안내하지 않습니다. 교육용 포크의 원본 구현은 내 독자 개발 성과와 구분합니다.
+
+## 팀 프로젝트 — Visual SLAM과 양팔 조작
+
+Visual SLAM으로 위치를 파악하는 이동 플랫폼에 양팔을 올려 작업을 수행하는 것이 팀 프로젝트의 목표입니다. 전형주의 양팔 태스크·데이터·정책 실험과 팀원 `shouttt1320`의 SLAM·이동 플랫폼 작업을 구분하고, 두 모듈 사이의 통합 과제를 함께 설명합니다.
+
+[팀 프로젝트 전체 구조와 역할 분담](projects/mobile-dual-arm/README.md) · [팀원 SLAM 공개 저장소](https://github.com/shouttt1320/Dapier_project_visaul_slam)
+
+팀원 코드를 개인의 독자 구현으로 표시하지 않으며, 모듈별 코드 확인과 전체 실물 태스크 성공을 같은 상태로 기록하지 않습니다.
 
 ## 전체 글 — 기초에서 검증까지
 
@@ -42,6 +51,7 @@
 | [`index.html`](index.html) | 프로필, 최근 글, 관련 영상, 학습 순서를 묶는 아카이브 첫 화면 |
 | [`styles.css`](styles.css) | 첫 화면과 글의 공통 스타일 |
 | [`articles/`](articles/) | 날짜·주제별 본문 HTML과 문서 안내 |
+| [`projects/mobile-dual-arm/`](projects/mobile-dual-arm/README.md) | 이동형 양팔 팀 프로젝트의 목표·역할·소스 근거·통합 과제 |
 | [`assets/`](assets/) | 본문 그림·도식·이미지 자산; 파일이 있다는 사실을 실험 성공의 증거로 사용하지 않음 |
 | [`data/blog-inventory.csv`](data/blog-inventory.csv) | 글 목록 관리 자료 |
 | [`data/content-lineage.csv`](data/content-lineage.csv) | 콘텐츠 계보 관리 자료 |
@@ -66,4 +76,4 @@ GitHub Pages용 정적 구조로 준비된 저장소입니다. 실제 호스팅 
 
 공개 글에는 사적인 Notion 링크, 원시 녹취, 장치 serial, 로컬 경로, 인증 정보 또는 타인의 개인정보를 넣지 않습니다. 이미 공개된 자료도 출처와 사용 범위를 확인하며, 검토하지 않은 전체 파일에 대해 보안 검사가 완료됐다고 주장하지 않습니다.
 
-문서·목록 점검: 2026-09-05. 학습 글의 내용 확인과 프로그램·실물의 실행 검증은 별도입니다.
+문서·목록 점검: 2026-09-05. 팀 프로젝트 구조·팀원 소스 안내 추가: 2026-09-07. 학습 글의 내용 확인과 프로그램·실물의 실행 검증은 별도입니다.
