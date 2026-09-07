@@ -1,8 +1,20 @@
-# Visual SLAM 기반 이동형 양팔 로봇
+# 이동형 양팔 로봇 — Imitation Learning · Simulation · Sim-to-Real
 
-**Visual SLAM으로 위치를 파악하는 이동 플랫폼에 SO-101 양팔을 결합해, 작업 위치로 이동한 뒤 양팔 태스크를 수행하는 팀 프로젝트입니다.**
+**전형주 주 담당: 양팔 로봇의 모방학습(Imitation Learning), 시뮬레이션(Simulation), Sim-to-Real.**
+
+Visual SLAM 기반 이동 플랫폼에 SO-101 양팔을 결합해 작업 위치로 이동하고 물체를 조작하는 팀 프로젝트입니다. 저는 양팔 태스크의 학습·시뮬레이션·실물 전이 검증을 중심으로 작업합니다. Visual SLAM·이동 모듈과 양팔 태스크를 하나의 작업 흐름으로 연결하는 것이 팀의 통합 목표입니다.
 
 [전형주 포트폴리오](https://julianjeonresume.netlify.app/) · [Workbench](https://julianjeonresume.netlify.app/workbench/) · [팀원 SLAM 저장소](https://github.com/shouttt1320/Dapier_project_visaul_slam) · [학습 아카이브로 돌아가기](../../README.md)
+
+## 주 담당 영역
+
+| 영역 | 담당 범위 | 결과를 확인하는 기준 |
+|---|---|---|
+| Imitation Learning | 양팔 태스크의 모방학습과 시연 데이터·정책 실험 | 데이터 준비, 학습 실행, 정책 평가를 서로 다른 단계로 확인 |
+| Simulation | 양팔 로봇과 태스크의 시뮬레이션·실험·검증 | 사용 모델과 실험 조건을 확인하고 가상 결과와 실물 결과를 구분 |
+| Sim-to-Real | 시뮬레이션과 실제 장비를 연결하는 적용·검증 작업 | 적용을 위한 준비, 장치별 검증, 실제 태스크 성공을 구분 |
+
+위 표는 본인이 설명한 **주 담당 분야**입니다. 각 분야의 모든 기능이 완성됐거나 실물 전이가 성공했다는 의미는 아니며, 세부 구현과 결과는 코드 변경 이력·실험 기록으로 확인합니다. 담당 범위 명확화: 2026-09-07.
 
 ## 프로젝트 목표
 
@@ -26,11 +38,11 @@
 
 | 구분 | 담당 범위 | 확인할 자료 |
 |---|---|---|
-| 전형주 / Alpenj | 양팔 로봇 태스크, 모방학습과 실험 데이터·검증을 중심으로 진행하는 작업 | [DAPIER의 2ARM_ROBOT](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT) — 비공개 저장소, 접근 권한 필요 |
-| 팀원 / shouttt1320 | Visual SLAM·이동 플랫폼 측 작업 | [Dapier_project_visaul_slam](https://github.com/shouttt1320/Dapier_project_visaul_slam) — 팀원 공개 저장소 |
+| 전형주 / Alpenj | Imitation Learning · Simulation · Sim-to-Real을 중심으로 하는 양팔 태스크 작업 | [DAPIER의 2ARM_ROBOT](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT) — 비공개 저장소, 접근 권한 필요 |
+| 팀원 / shouttt1320 | Visual SLAM·이동 플랫폼 측 구현 | [Dapier_project_visaul_slam](https://github.com/shouttt1320/Dapier_project_visaul_slam) — 팀원 공개 저장소 |
 | 팀 공동 목표 | 위치 추정·이동과 양팔 조작을 연결하는 전체 작업 흐름 | 두 모듈을 연결한 통합 실행·검증 자료는 별도로 확보할 항목 |
 
-**SLAM 구현은 팀원이 담당했습니다.** 팀원 저장소는 전체 시스템의 협업 구조와 이동 모듈을 설명하기 위한 링크이며, 전형주의 독자 구현 성과로 표시하지 않습니다. 위 개인 담당 범위 또한 모든 기능의 구현·통합 완료를 의미하지 않으며, 세부 기여는 해당 코드 변경 이력과 실험 기록으로 구분합니다.
+Visual SLAM은 이 팀 프로젝트의 주요 구성 요소이며 구현 담당은 `shouttt1320`입니다. 전체 프로젝트 참여와 모듈별 구현 기여를 구분하고, 전형주의 개인 전문 영역은 양팔의 모방학습·시뮬레이션·Sim-to-Real로 소개합니다. VSLAM과 양팔의 통합 목표를 적었다는 이유로 공동 통합이 이미 완료됐다고 표시하지 않습니다.
 
 ## 팀원 저장소에서 확인한 구성
 
