@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">미래 예측과 지연, 토크 한계를 연결한 도식</title>
+  <desc id="desc">여러 미래 경로가 시간 지연을 지나 힘의 한계 안에서 하나의 실행 경로로 좁혀지는 추상 도식</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101b31"/><stop offset="1" stop-color="#172c4a"/></linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#6ee7f2"/><stop offset="1" stop-color="#4aa8ff"/></linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffd166"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="760" rx="34" fill="url(#bg)"/>
+  <path d="M80 590H1115" stroke="#294a6d" stroke-width="2"/>
+  <path d="M80 170H1115" stroke="#294a6d" stroke-width="2" opacity=".45"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 530 C210 460 250 270 380 250 S560 480 700 410" stroke="#5eead4" stroke-width="10" opacity=".9" filter="url(#glow)"/>
+    <path d="M90 530 C230 500 260 390 390 360 S560 330 700 410" stroke="#60a5fa" stroke-width="7" opacity=".85"/>
+    <path d="M90 530 C210 580 300 560 420 500 S590 470 700 410" stroke="#818cf8" stroke-width="7" opacity=".75"/>
+    <path d="M90 530 C220 430 330 190 470 210 S600 330 700 410" stroke="#c084fc" stroke-width="5" opacity=".55"/>
+    <path d="M700 410 C815 405 900 400 1080 400" stroke="url(#cyan)" stroke-width="12" filter="url(#glow)"/>
+    <path d="M700 410 C790 350 835 280 900 250" stroke="#334e68" stroke-width="8" opacity=".7"/>
+    <path d="M700 410 C800 500 850 555 930 560" stroke="#334e68" stroke-width="8" opacity=".7"/>
+    <path d="M930 180V600" stroke="#fb7185" stroke-width="8" stroke-dasharray="16 16"/>
+    <path d="M930 250H1085" stroke="url(#amber)" stroke-width="14" filter="url(#glow)"/>
+    <path d="M930 560H1085" stroke="url(#amber)" stroke-width="14" filter="url(#glow)"/>
+  </g>
+  <g fill="#d9faff">
+    <circle cx="90" cy="530" r="14"/>
+    <circle cx="700" cy="410" r="16" fill="#ffd166"/>
+    <circle cx="1080" cy="400" r="18" fill="#f8fafc"/>
+  </g>
+  <g transform="translate(740 92)">
+    <circle cx="90" cy="90" r="74" fill="#11243c" stroke="#6ee7f2" stroke-width="7"/>
+    <circle cx="90" cy="90" r="8" fill="#6ee7f2"/>
+    <path d="M90 90V42M90 90L126 112" stroke="#e0fbff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M90 6V20M174 90H160M90 174V160M6 90H20" stroke="#6ee7f2" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1000 285)">
+    <circle cx="60" cy="115" r="58" fill="#162a43" stroke="#ffd166" stroke-width="7"/>
+    <path d="M60 57V173M2 115H118" stroke="#ffd166" stroke-width="5" opacity=".8"/>
+    <path d="M60 115L103 82" stroke="#fff2bf" stroke-width="9" stroke-linecap="round"/>
+    <path d="M60 115L29 145" stroke="#fff2bf" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <path d="M1055 400H1130" stroke="#fff" stroke-width="4" stroke-dasharray="5 12" opacity=".6"/>
+</svg>
+
