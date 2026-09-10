@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">서로 다른 센서 관측이 하나의 시간과 좌표 상태로 정렬되는 도식</title>
+  <desc id="desc">카메라 픽셀, 깊이 층, 관성 변화가 중앙의 공통 상태 축으로 모이는 학습 도식</desc>
+  <rect width="1600" height="900" fill="#101827"/>
+  <path d="M80 120H1520M80 780H1520" stroke="#26364f" stroke-width="2"/>
+  <g transform="translate(110 190)">
+    <rect width="330" height="300" rx="28" fill="#172a46" stroke="#73b6ff" stroke-width="4"/>
+    <g stroke="#73b6ff" stroke-width="2" opacity=".65">
+      <path d="M35 55H295M35 110H295M35 165H295M35 220H295M35 275H295"/>
+      <path d="M55 35V265M110 35V265M165 35V265M220 35V265M275 35V265"/>
+    </g>
+    <circle cx="165" cy="150" r="55" fill="none" stroke="#d8f1ff" stroke-width="8"/>
+    <circle cx="165" cy="150" r="12" fill="#d8f1ff"/>
+  </g>
+  <g transform="translate(110 535)">
+    <rect width="330" height="170" rx="28" fill="#18353b" stroke="#53d5b1" stroke-width="4"/>
+    <path d="M35 45H295M35 85H295M35 125H295" stroke="#53d5b1" stroke-width="2" opacity=".6"/>
+    <g opacity=".95">
+      <path d="M50 45H125V85H205V125H280" fill="none" stroke="#d8fff5" stroke-width="22" stroke-linecap="square"/>
+      <path d="M50 45H125V85H205V125H280" fill="none" stroke="#53d5b1" stroke-width="10" stroke-linecap="square"/>
+    </g>
+  </g>
+  <g transform="translate(1160 230)">
+    <rect width="330" height="300" rx="28" fill="#352943" stroke="#f5a9d6" stroke-width="4"/>
+    <path d="M35 150H295" stroke="#f5a9d6" stroke-width="2" opacity=".5"/>
+    <path d="M35 150 C60 80 85 220 110 150 S160 80 185 150 S235 220 260 150 S285 80 295 150" fill="none" stroke="#ffe0f1" stroke-width="10"/>
+    <path d="M35 150 C60 120 85 180 110 150 S160 120 185 150 S235 180 260 150 S285 120 295 150" fill="none" stroke="#f5a9d6" stroke-width="4" opacity=".8"/>
+  </g>
+  <g transform="translate(690 285)">
+    <circle cx="110" cy="110" r="95" fill="#f4bd4f" opacity=".18"/>
+    <circle cx="110" cy="110" r="58" fill="#f4bd4f" opacity=".3" stroke="#ffe6a3" stroke-width="5"/>
+    <circle cx="110" cy="110" r="16" fill="#fff2c2"/>
+    <path d="M110 5V215M5 110H215" stroke="#ffe6a3" stroke-width="4" opacity=".8"/>
+  </g>
+  <g fill="none" stroke-width="9" stroke-linecap="round">
+    <path d="M440 340 C540 340 565 350 690 395" stroke="#73b6ff"/>
+    <path d="M440 620 C540 620 565 500 690 435" stroke="#53d5b1"/>
+    <path d="M1160 380 C1050 380 1015 395 910 420" stroke="#f5a9d6"/>
+  </g>
+  <g fill="#fff2c2">
+    <circle cx="690" cy="395" r="8"/><circle cx="690" cy="435" r="8"/><circle cx="910" cy="420" r="8"/>
+  </g>
+  <path d="M800 150V750" stroke="#f4bd4f" stroke-width="6" opacity=".9"/>
+  <path d="M770 200H830M770 700H830" stroke="#f4bd4f" stroke-width="6"/>
+  <g fill="#d5def0" opacity=".9">
+    <circle cx="800" cy="260" r="6"/><circle cx="800" cy="330" r="6"/><circle cx="800" cy="400" r="6"/><circle cx="800" cy="470" r="6"/><circle cx="800" cy="540" r="6"/><circle cx="800" cy="610" r="6"/>
+  </g>
+  <g stroke="#f4bd4f" stroke-width="4" opacity=".55">
+    <path d="M470 170H1040"/><path d="M470 730H1040"/>
+  </g>
+</svg>
+
