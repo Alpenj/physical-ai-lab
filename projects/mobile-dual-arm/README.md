@@ -4,7 +4,7 @@
 
 SO-101 양팔과 TurtleBot3 Waffle Pi를 연결해 작업 위치로 이동하고 물체를 조작하는 팀 프로젝트입니다. 저는 시연 데이터와 정책 실험, 물리 모델, 접촉·경로 검사와 실물 전이 검증을 중심으로 작업합니다. **VSLAM 모듈의 설계·구현·코드 작업에도 협업 참여했습니다.** 이동 모듈의 주 담당은 팀원 `shouttt1320`입니다.
 
-[포트폴리오·이력서](https://julianjeonresume.netlify.app/) · [공개 개발 코드](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT) · [양팔 연구 기록](https://github.com/Alpenj/DAPIER/blob/main/2ARM_ROBOT/docs/RESEARCH_SUMMARY_KO.md) · [VSLAM 협업 코드](https://github.com/shouttt1320/Dapier_project_visaul_slam) · [학습 아카이브](../../README.md)
+[포트폴리오·이력서](https://julianjeonresume.netlify.app/) · [공개 개발 코드](https://github.com/Alpenj/sweepick) · [양팔 연구 기록](https://github.com/Alpenj/sweepick/blob/main/docs/RESEARCH_SUMMARY_KO.md) · [VSLAM 협업 코드](https://github.com/shouttt1320/Dapier_project_visaul_slam) · [학습 아카이브](../../README.md)
 
 ## 프로젝트 목표
 
@@ -26,9 +26,9 @@ SO-101 양팔과 TurtleBot3 Waffle Pi를 연결해 작업 위치로 이동하고
 
 | 영역 | 수행하는 작업 | 코드와 근거 |
 |---|---|---|
-| 모방학습 | 시연 데이터 의미·시간 정렬·분할, 행동 묶음과 정책 평가 | [데이터·학습 패키지](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT/src/shoe_sorting_data) |
-| 시뮬레이션 | SO-101·그리퍼·작업공간 모델, 접촉·하중·경로와 실패 분석 | [MuJoCo 모델](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT/sim/mobile_dual_so101) |
-| Sim-to-Real | 관측과 관절 상태·좌표·보정·제한 명령을 연결하는 검증 | [프로젝트 구성과 검증 상태](https://github.com/Alpenj/DAPIER/blob/main/2ARM_ROBOT/README.md) |
+| 모방학습 | 시연 데이터 의미·시간 정렬·분할, 행동 묶음과 정책 평가 | [데이터·학습 패키지](https://github.com/Alpenj/sweepick/tree/main/src/shoe_sorting_data) |
+| 시뮬레이션 | SO-101·그리퍼·작업공간 모델, 접촉·하중·경로와 실패 분석 | [MuJoCo 모델](https://github.com/Alpenj/sweepick/tree/main/sim/mobile_dual_so101) |
+| Sim-to-Real | 관측과 관절 상태·좌표·보정·제한 명령을 연결하는 검증 | [프로젝트 구성과 검증 상태](https://github.com/Alpenj/sweepick/blob/main/README.md) |
 | VSLAM 협업 | 팀원 주 담당 모듈의 설계·구현·코드 작업 보조 참여 | [이동·도킹 모듈](https://github.com/shouttt1320/Dapier_project_visaul_slam) |
 
 교육 예제, 외부 라이브러리와 팀원이 주도한 구현은 개인 단독 성과와 구분합니다. DAPIER는 현재 공개 저장소이며, 기존의 접근 권한 필요 안내를 수정했습니다.
@@ -47,7 +47,7 @@ SO-101 양팔과 TurtleBot3 Waffle Pi를 연결해 작업 위치로 이동하고
 
 2026-09-21 후보에서는 normal HOME부터 접근·집기·들기·3초 HOLD를 하나의 연속 SIM으로 실행했습니다. 기록된 길이는 18,203 physics step / 36.406 s이며 HOLD 구간 자체가 3.000 s입니다. 접근 구간의 copied/live 표본 5,582개와 마지막 적분 상태도 따로 대조했습니다.
 
-이 결과는 [고정 커밋 f6b61db](https://github.com/Alpenj/DAPIER/commit/f6b61dbc81273f6d775d96f7950461fac9113cbb)와 [PR #68](https://github.com/Alpenj/DAPIER/pull/68)에 보존돼 있습니다. **PR은 닫혔지만 병합되지 않았습니다.** 현재 main의 기본 실행기, ACT 정책이나 실물 전체 과제의 성공으로 표시하지 않습니다. 비교 조건·수치·실패 원인과 후속 보정 연구는 [연구 기록](https://github.com/Alpenj/DAPIER/blob/main/2ARM_ROBOT/docs/RESEARCH_SUMMARY_KO.md)에 모았습니다.
+이 결과는 [고정 커밋 f6b61db](https://github.com/Alpenj/DAPIER/commit/f6b61dbc81273f6d775d96f7950461fac9113cbb)와 [PR #68](https://github.com/Alpenj/DAPIER/pull/68)에 보존돼 있습니다. **PR은 닫혔지만 병합되지 않았습니다.** 현재 main의 기본 실행기, ACT 정책이나 실물 전체 과제의 성공으로 표시하지 않습니다. 비교 조건·수치·실패 원인과 후속 보정 연구는 [연구 기록](https://github.com/Alpenj/sweepick/blob/main/docs/RESEARCH_SUMMARY_KO.md)에 모았습니다.
 
 ## VSLAM·Nav2·도킹의 현재 공개 구현
 
