@@ -2,9 +2,9 @@
 
 **모방학습·시뮬레이션·Sim-to-Real을 중심으로 로봇의 학습과 검증을 기록합니다.**
 
-[포트폴리오·이력서](https://julianjeonresume.netlify.app/) · [공개 개발 코드 DAPIER](https://github.com/Alpenj/DAPIER) · [양팔 프로젝트](projects/mobile-dual-arm/README.md) · [전체 글](articles/)
+[포트폴리오·이력서](https://julianjeonresume.netlify.app/) · [SWEEPICK 코드](https://github.com/Alpenj/sweepick) · [DAPIER 미니 프로젝트·실습](https://github.com/Alpenj/DAPIER) · [양팔 프로젝트](projects/mobile-dual-arm/README.md) · [전체 글](articles/)
 
-DAPIER 국비교육에서 배운 개념을 실습과 프로젝트에 적용하며 정리한 공개 학습 아카이브입니다. 코드와 실험 이력은 DAPIER 저장소에, 읽기 쉬운 설명과 프로젝트 안내는 이곳에 둡니다. 교육 예제, 직접 설계·수정한 부분, 팀 협업과 실제 실험 결과를 구분합니다.
+DAPIER 국비교육에서 배운 개념을 실습과 프로젝트에 적용하며 정리한 공개 학습 아카이브입니다. 코드와 실험 이력은 SWEEPICK·DAPIER 저장소에, 읽기 쉬운 설명과 프로젝트 안내는 이곳에 둡니다. 교육 예제, 직접 설계·수정한 부분, 팀 협업과 실제 실험 결과를 구분합니다.
 
 ## 처음 방문했다면
 
@@ -12,12 +12,12 @@ DAPIER 국비교육에서 배운 개념을 실습과 프로젝트에 적용하�
 |---|---|
 | 경력과 프로젝트 전체 맥락 | [Physical AI Portfolio](https://julianjeonresume.netlify.app/) |
 | 주 담당 분야와 이동형 양팔 팀 프로젝트 | [TJJ — 모방학습·시뮬레이션·Sim-to-Real](projects/mobile-dual-arm/README.md) |
-| 파지 실패·위치 오차·미끄러짐을 조사한 과정 | [양팔 조작 연구 기록](https://github.com/Alpenj/DAPIER/blob/main/2ARM_ROBOT/docs/RESEARCH_SUMMARY_KO.md) |
-| 실제 개발 코드와 폴더별 실행 안내 | [DAPIER](https://github.com/Alpenj/DAPIER) · [2ARM_ROBOT](https://github.com/Alpenj/DAPIER/tree/main/2ARM_ROBOT) |
+| 파지 실패·위치 오차·미끄러짐을 조사한 과정 | [양팔 조작 연구 기록](https://github.com/Alpenj/sweepick/blob/main/docs/RESEARCH_SUMMARY_KO.md) |
+| 실제 개발 코드와 폴더별 실행 안내 | [SWEEPICK](https://github.com/Alpenj/sweepick) · [DAPIER 미니 프로젝트·실습](https://github.com/Alpenj/DAPIER) |
 | 데이터와 검증을 바라보는 방식 | [Episode 데이터 계약](articles/2026-09-01-robot-episode-data-contract.html), [시뮬레이션 가정과 검증 범위](articles/2026-09-03-simulation-assumption-range-check.html) |
 | 로봇 시스템의 기본 개념 | [로봇 모델·FK·IK](articles/2026-08-06-robot-model-fk-ik-check.html), [ROS 2 통신 계약](articles/2026-08-13-ros2-communication-contract.html) |
 | 웹·모바일 개발 | [soccerhelper](https://github.com/Alpenj/soccerhelper) — 팀 운영 MVP |
-| 교육용 원본을 따라 읽는 코드 | [SO-101 학습 코드](https://github.com/Alpenj/DAPIER/tree/main/so101_imitation_learning), [deepThinkCar 실습](https://github.com/Alpenj/DAPIER/tree/main/deepThinkCar_mini) |
+| 교육용 원본을 따라 읽는 코드 | [SO-101 학습 코드](https://github.com/Alpenj/DAPIER/tree/main/coursework/so101_imitation_learning), [deepThinkCar 실습](https://github.com/Alpenj/DAPIER/tree/main/mini-projects/deepThinkCar_mini) |
 
 **DAPIER는 현재 공개 저장소입니다.** 과거의 비공개 안내를 수정했으며, 교육용 포크를 통합한 코드는 DAPIER의 해당 하위 폴더로 연결합니다. 외부 원본 구현과 라이브러리는 개인의 독자 개발 성과로 계산하지 않습니다.
 
@@ -31,7 +31,7 @@ SO-101 양팔의 물체 조작을 TurtleBot3 Waffle Pi의 이동과 연결하고
 
 **VSLAM 모듈의 설계·구현·코드 작업에도 협업 참여했습니다.** Visual SLAM·이동 플랫폼의 주 담당은 팀원 `shouttt1320`입니다. 현재 협업 소스에는 RTAB-Map RGB-D 매핑·localization, Nav2, 듀얼 ArUco 도킹과 GUI가 있습니다. 개별 모듈의 코드 구현, 현장 재현과 이동·양팔 조작 통합 성공은 따로 확인합니다.
 
-[담당 범위·현재 소스·통합 과제](projects/mobile-dual-arm/README.md) · [양팔 실험 근거](https://github.com/Alpenj/DAPIER/blob/main/2ARM_ROBOT/docs/RESEARCH_SUMMARY_KO.md) · [VSLAM 협업 코드](https://github.com/shouttt1320/Dapier_project_visaul_slam)
+[담당 범위·현재 소스·통합 과제](projects/mobile-dual-arm/README.md) · [양팔 실험 근거](https://github.com/Alpenj/sweepick/blob/main/docs/RESEARCH_SUMMARY_KO.md) · [VSLAM 협업 코드](https://github.com/shouttt1320/Dapier_project_visaul_slam)
 
 ### 실험 결과를 읽을 때
 
